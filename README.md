@@ -23,6 +23,11 @@ $ sudo apt-get install ros-noetic-ddynamic-reconfigure
 $ sudo apt-get install ros-noetic-ros-controllers
 ```
 
+- For [MoveIt](https://moveit.ros.org/) install
+```
+$ sudo apt-get install ros-noetic-moveit
+```
+
 - [conan](https://docs.conan.io/en/latest/howtos/other_languages_package_manager/python.html) and [ros_kortex](https://github.com/Kinovarobotics/ros_kortex) are required to simulate Gen3 Lite.
 ```
 - install conan
@@ -38,11 +43,6 @@ $ git clone -b noetic-devel https://github.com/Kinovarobotics/ros_kortex.git
 - If [gazebo_grasp_fix plugin](https://github.com/JenniferBuehler/gazebo-pkgs) is already installed, delete gazebo-pkgs folder in ros_kortex/thrid_party
 ```
 $ rm -rf ~/catkin_ws/src/ros_kortex/third_party/gazebo-pkgs
-```
-
-- For [MoveIt](https://moveit.ros.org/) install
-```
-$ sudo apt-get install ros-noetic-moveit
 ```
 
 This package uses same ar_track_alvar package with our [husky_ur3_simulator](https://github.com/QualiaT/husky_ur3_simulator.git) package.
