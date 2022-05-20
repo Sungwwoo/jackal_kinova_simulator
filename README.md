@@ -23,12 +23,21 @@ $ sudo apt-get install ros-noetic-ddynamic-reconfigure
 $ sudo apt-get install ros-noetic-ros-controllers
 ```
 
-- To build kortex_driver package included in jackal_kinova_simulator, conan needs to be installed.
-- For detailed information, see [ros_kortex](https://github.com/Kinovarobotics/ros_kortex).
+- [conan](https://docs.conan.io/en/latest/howtos/other_languages_package_manager/python.html) and [ros_kortex](https://github.com/Kinovarobotics/ros_kortex) are required to simulate Gen3 Lite.
 ```
+- install conan
 $ python3 -m pip install conan
 $ echo "export CONAN_REVISIONS_ENABLED=1" >> ~/.bashrc
 $ source ~/.bashrc
+
+- install ros_kortex package
+$ cd ~/catkin_ws/src
+$ git clone -b noetic-devel https://github.com/Kinovarobotics/ros_kortex.git
+```
+
+- If [gazebo_grasp_fix plugin](https://github.com/JenniferBuehler/gazebo-pkgs) is already installed, delete gazebo-pkgs folder in ros_kortex/thrid_party
+```
+$ rm -rf ~/catkin_ws/src/ros_kortex/third_party/gazebo-pkgs
 ```
 
 - For [MoveIt](https://moveit.ros.org/) install
