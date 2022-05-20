@@ -35,7 +35,7 @@ $ source ~/.bashrc
 $ sudo apt-get install ros-noetic-moveit
 ```
 
-- This package uses same ar_track_alvar package with our [husky_ur3_simulator](https://github.com/QualiaT/husky_ur3_simulator.git) package.
+This package uses same ar_track_alvar package with our [husky_ur3_simulator](https://github.com/QualiaT/husky_ur3_simulator.git) package.
 - For [ar_track_alvar package](https://github.com/QualiaT/ar_track_alvar) install
 ```
 $ cd ~/catkin_ws/src
