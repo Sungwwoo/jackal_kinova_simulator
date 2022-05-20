@@ -1,4 +1,4 @@
-# jackal_kinova Noetic version
+# jackal_kinova_simulator Noetic version
 
 ## Overview
 This is a mobile manipulator simulator package using Gazebo, RViz, MoveIt, move_base.
@@ -6,7 +6,6 @@ This is a mobile manipulator simulator package using Gazebo, RViz, MoveIt, move_
 The model of the mobile manipulator robot was created by combining Kinova Robotics' Gen3 Lite and Clearpath Robotics's Jackal.
 
 This package is for ROS Noetic and not tested for Melodic.
-
 
 
 ## Installation
@@ -24,7 +23,7 @@ $ sudo apt-get install ros-noetic-ddynamic-reconfigure
 $ sudo apt-get install ros-noetic-ros-controllers
 ```
 
-To build kortex_driver package included in jackal_kinova_simulator, conan needs to be installed.
+- To build kortex_driver package included in jackal_kinova_simulator, conan needs to be installed.
 ```
 $ python3 -m pip install conan
 $ echo "export CONAN_REVISIONS_ENABLED=1" >> ~/.bashrc
@@ -36,7 +35,7 @@ $ source ~/.bashrc
 $ sudo apt-get install ros-noetic-moveit
 ```
 
-This package uses same ar_track_alvar package with our [husky_ur3_simulator](https://github.com/QualiaT/husky_ur3_simulator.git) package.
+- This package uses same ar_track_alvar package with our [husky_ur3_simulator](https://github.com/QualiaT/husky_ur3_simulator.git) package.
 - For [ar_track_alvar package](https://github.com/QualiaT/ar_track_alvar) install
 ```
 $ cd ~/catkin_ws/src

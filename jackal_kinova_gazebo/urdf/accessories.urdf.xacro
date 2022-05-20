@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!--
+    As you add to this URDF, please be aware that both the robot and
+    simulation include it. You must retain compatibility with all of
+    the following launch files:
+
+    jackal_viz/launch/view_model.launch
+    jackal_gazebo/launch/jackal_world.launch
+    jackal_base/launch/base.launch
+  -->
+
+  <!-- Macros to generate standoffs for offset payload mounting. -->
+  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/accessories/standoffs.urdf.xacro" />
+
+  <!-- This optional plate mounts both the upgraded GPS and the Velodyne 3D LIDAR. -->
+  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/accessories/bridge_plate.urdf.xacro" />
+
+  <!-- 2D Lidars -->
+  <!-- <xacro:include filename="$(find sick_tim)/urdf/sick_tim.urdf.xacro" />
+  <xacro:include filename="$(find lms1xx)/urdf/sick_lms1xx.urdf.xacro" />
+  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/accessories/sick_lms1xx_inverted_mount.urdf.xacro" />
+  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/accessories/sick_lms1xx_upright_mount.urdf.xacro" />
+  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/accessories/hokuyo_utm30.urdf.xacro" />
+  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/accessories/hokuyo_ust10.urdf.xacro" />
+  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/accessories/vlp16_mount.urdf.xacro" />
+  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/accessories/hdl32_mount.urdf.xacro" /> -->
+
+  <!--
+    Add Microstrain IMU. By default the Jackal comes equipped with an IMU linked to "imu_link". These extra
+    optional microstrain IMU's will be added to another frame, by default, "microstrain_link".
+  -->
+  <xacro:if value="$(optenv JACKAL_IMU_MICROSTRAIN 0)">
+    <xacro:property name="frame"  value="$(optenv JACKAL_IMU_MICROSTRAIN_LINK microstrain_link)"/>
+    <xacro:property name="parent" value="$(optenv JACKAL_IMU_MICROSTRAIN_PARENT base_link)"/>
+    <xacro:property name="xyz"    value="$(optenv JACKAL_IMU_MICROSTRAIN_OFFSET -0.139 0.096 0.100)"/>
+    <xacro:property name="rpy"    value="$(optenv JACKAL_IMU_MICROSTRAIN_RPY ${PI} 0 -${PI/2})"/>
+    <link name="microstrain_link" />
+    <joint name="microstrain_joint" type="fixed">
+      <parent link="$(optenv JACKAL_IMU_PARENT base_link)" />
+      <child link="microstrain_link" />
+      <!-- TODO This offset & rotation may not be final, but it's good enough for now.  May update, pending RSCI-10 -->
+      <origin xyz="$(optenv JACKAL_IMU_OFFSET -0.139 0.096 0.100)" rpy="$(optenv JACKAL_IMU_RPY ${PI} 0 -${PI/2})" />
+    </joint>
+  </xacro:if>
+  
+  <!--
+    Add primary/secondary 2D lidar sensors.  By default these are SICK LMS1xx but can be changed with the
+    JACKAL_LASER_MODEL and JACKAL_LASER_SECONDARY_MODEL environment variables. Valid model designations are:
+    - lms1xx (default) :: SICK LMS1xx
+    - ust10            :: Hokuyo UST10
+    - utm30            :: Hokuyo UTM30
+  -->
+
+
+  <!--
+    Add a Nav. Sat. By default this is a Novatel Smart6, but can be changed with the 
+    JACKAL_NAVSAT_MODEL environment variable. Valid model designations are: 
+    - smart6 (default)    :: Novatel Smart6
+    - smart7              :: Novatel Smart7
+  -->
+  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/accessories/novatel_smart6.urdf.xacro" />
+  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/accessories/novatel_smart7.urdf.xacro" />
+
+  <xacro:if value="$(optenv JACKAL_NAVSAT 0)">
+    <xacro:property name="mount" value="$(optenv JACKAL_NAVSAT_MOUNT rear)" />
+    <xacro:property name="tower" value="$(optenv JACKAL_NAVSAT_TOWER 1)" />
+    <xacro:property name="prefix" value="$(optenv JACKAL_NAVSAT_PREFIX ${mount})" />
+    <xacro:property name="parent" value="$(optenv JACKAL_NAVSAT_PARENT ${mount}_mount)" />
+    <xacro:property name="navsat_model" value="$(optenv JACKAL_NAVSAT_MODEL smart6)" />
+    <!--- Novotel Smart6 -->
+    <xacro:if value="${navsat_model == 'smart6'}">
+      <xacro:novatel_smart6 prefix="${prefix}"/>
+      <!-- Tower Enabled -->
+      <xacro:if value="${tower}">
+        <xacro:bridge_plate prefix="${prefix}" parent="${parent}" height="$(optenv JACKAL_NAVSAT_HEIGHT 0.1)">
+          <origin xyz="$(optenv JACKAL_NAVSAT_OFFSET 0 0 0)" rpy="$(optenv JACKAL_NAVSAT_RPY 0 0 0)"/>
+        </xacro:bridge_plate>
+
+        <joint name="${prefix}_navsat_joint" type="fixed">
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <parent link="${prefix}_bridge" />
+          <child link="${prefix}_navsat" />
+        </joint>
+      </xacro:if>
+      <!-- Tower Disabled -->
+      <xacro:unless value="${tower}">
+        <joint name="${prefix}_navsat_joint" type="fixed">
+          <origin xyz="$(optenv JACKAL_NAVSAT_OFFSET 0 0 0)" rpy="$(optenv JACKAL_NAVSAT_RPY 0 0 0)" />
+          <parent link="${parent}" />
+          <child link="${prefix}_navsat" />
+        </joint>
+      </xacro:unless>
+    </xacro:if>
+
+    <!-- Novotel Smart7 -->
+    <xacro:if value="${navsat_model == 'smart7'}">
+      <xacro:novatel_smart7 prefix="${prefix}"/>
+      <!-- Tower Enabled -->
+      <xacro:if value="${tower}">
+        <xacro:bridge_plate prefix="${prefix}" parent="${parent}" height="$(optenv JACKAL_NAVSAT_HEIGHT 0.1)">
+          <origin xyz="$(optenv JACKAL_NAVSAT_OFFSET 0 0 0)" rpy="$(optenv JACKAL_NAVSAT_RPY 0 0 0)"/>
+        </xacro:bridge_plate>
+
+        <joint name="${prefix}_navsat_joint" type="fixed">
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <parent link="${prefix}_bridge" />
+          <child link="${prefix}_navsat" />
+        </joint>
+      </xacro:if>
+      <!-- Tower Disabled -->
+      <xacro:unless value="${tower}">
+        <joint name="${prefix}_navsat_joint" type="fixed">
+          <origin xyz="$(optenv JACKAL_NAVSAT_OFFSET 0 0 0)" rpy="$(optenv JACKAL_NAVSAT_RPY 0 0 0)" />
+          <parent link="${parent}" />
+          <child link="${prefix}_navsat" />
+        </joint>
+      </xacro:unless>
+    </xacro:if>
+  </xacro:if>
+
+  <!-- 
+    Add Cameras. 
+    - JACKAL_FLEA3
+    - JACKAL_STEREO_FLEA3
+    - JACKAL_BB2
+  -->
+
+  
+  <!-- Fender Accessories --> 
+  <xacro:if value="$(optenv JACKAL_FRONT_ACCESSORY_FENDER 0)">
+    <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/accessories/hokuyo_ust10.urdf.xacro" />
+    <xacro:if value="$(optenv JACKAL_FRONT_FENDER_UST10 0)">
+      <xacro:hokuyo_ust10_mount
+        prefix="front"
+        parent_link="front_fender_accessory_link"
+        min_angle="${-pi/2}"
+        max_angle="${pi/2}"
+        topic="$(optenv JACKAL_FRONT_LASER_TOPIC front/scan)">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+      </xacro:hokuyo_ust10_mount>
+    </xacro:if>
+  </xacro:if>
+
+  <xacro:if value="$(optenv JACKAL_REAR_ACCESSORY_FENDER 0)">
+    <xacro:if value="$(optenv JACKAL_REAR_FENDER_UST10 0)">
+      <xacro:hokuyo_ust10_mount
+        prefix="rear"
+        parent_link="rear_fender_accessory_link"
+        min_angle="${-pi/2}"
+        max_angle="${pi/2}"
+        topic="$(optenv JACKAL_REAR_LASER_TOPIC rear/scan)">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+      </xacro:hokuyo_ust10_mount>
+    </xacro:if>
+  </xacro:if>
+
+  <!-- Bumper Accessories -->
+  <xacro:if value="$(optenv JACKAL_WIBOTIC_BUMPER 0)">
+    <link name="wibotic_bumper">
+      <visual>
+        <geometry>
+          <mesh filename="package://jackal_kinova_gazebo/meshes/wibotic_bumper.stl" />
+        </geometry>
+        <material name="dark_grey" />
+      </visual>
+      <collision>
+        <geometry>
+          <box size="0.115 0.25 0.145"/>
+        </geometry>
+        <origin xyz="-0.017575 0 0.0575" rpy="0 0 0"/>
+      </collision>
+    </link>
+    <joint name="wibotic_bumper_joint" type="fixed">
+      <origin xyz="0.285 0 0.07455" rpy="0 0 0"/>
+      <parent link="base_link"/>
+      <child link="wibotic_bumper"/>
+    </joint>
+  </xacro:if>
+
+  <xacro:if value="$(optenv JACKAL_ARK_ENCLOSURE 0)">
+    <link name="ark_enclosure_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://jackal_kinova_gazebo/meshes/ark_enclosure.stl"/>
+        </geometry>
+        <material name="dark_grey" />
+      </visual>
+    </link>
+    <joint name="ark_enclosure_joint" type="fixed">
+      <parent link="mid_mount" />
+      <child link="ark_enclosure_link" />
+    </joint>
+    <gazebo reference="ark_enclosure_link">
+      <material>Gazebo/DarkGrey</material>
+      <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+  </xacro:if>
+
+</robot>

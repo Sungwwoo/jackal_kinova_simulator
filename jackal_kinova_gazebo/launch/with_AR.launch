@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <arg name="x" default="0" />
+    <arg name="y" default="0" />
+    <arg name="z" default="0.1" />
+    <arg name="yaw" default="0" />
+    <arg name="joystick" default="true" />
+    <arg name="debug" default="false" />
+    <arg unless="$(arg debug)" name="launch_prefix" value="" />
+    <arg     if="$(arg debug)" name="launch_prefix" value="gdb --ex run --args" />
+    <arg name="rviz_config" default="" />
+    <arg     if="$(eval rviz_config=='')" name="command_args" value="" />
+    <arg unless="$(eval rviz_config=='')" name="command_args" value="-d $(arg rviz_config)" />
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="paused" value="true"/>
+        <arg name="world_name" value="$(find jackal_kinova_gazebo)/worlds/aisle.world"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="gui" value="true"/>
+        <arg name="headless" value="false"/>
+        <arg name="debug" value="false"/>
+    </include>
+
+    <include file="$(find jackal_kinova_gazebo)/launch/spawn_jackal.launch">
+        <arg name="x" value="$(arg x)" />
+        <arg name="y" value="$(arg y)" />
+        <arg name="z" value="$(arg z)" />
+        <arg name="yaw" value="$(arg yaw)" />
+        <arg name="joystick" value="$(arg joystick)" />
+    </include>
+
+    <!-- <include file="$(find laser_filters)/examples/box_filter_example.launch"/> -->
+
+</launch>
