@@ -28,19 +28,19 @@ $ sudo apt-get install ros-noetic-ros-controllers
 $ sudo apt-get install ros-noetic-moveit
 ```
 
-- [conan](https://docs.conan.io/en/latest/howtos/other_languages_package_manager/python.html) and [ros_kortex](https://github.com/Kinovarobotics/ros_kortex) are required to simulate Gen3 Lite.
+- kortex_driver in [ros_kortex](https://github.com/Kinovarobotics/ros_kortex) is required to simulate Gen3 Lite, and [conan](https://docs.conan.io/en/latest/howtos/other_languages_package_manager/python.html) is required to build [ros_kortex](https://github.com/Kinovarobotics/ros_kortex). 
 ```
-- install conan
+- conan
 $ python3 -m pip install conan
 $ echo "export CONAN_REVISIONS_ENABLED=1" >> ~/.bashrc
 $ source ~/.bashrc
 
-- install ros_kortex package
+- ros_kortex
 $ cd ~/catkin_ws/src
 $ git clone -b noetic-devel https://github.com/Kinovarobotics/ros_kortex.git
 ```
 
-- If [gazebo_grasp_fix plugin](https://github.com/JenniferBuehler/gazebo-pkgs) is already installed, delete gazebo-pkgs folder in ros_kortex/thrid_party
+- If [gazebo_grasp_fix plugin](https://github.com/JenniferBuehler/gazebo-pkgs) is already installed, delete gazebo-pkgs folder in ros_kortex/thrid_party before running catkin_make.
 ```
 $ rm -rf ~/catkin_ws/src/ros_kortex/third_party/gazebo-pkgs
 ```
@@ -90,7 +90,7 @@ $ cd ~/catkin_ws/
 $ catkin_make
 ```
 
-## How to start?
+## How to Use
 ```
 - Bring up Gazebo with the robot model
 $ roslaunch jackal_kinova_gazebo HRI_lab.launch
