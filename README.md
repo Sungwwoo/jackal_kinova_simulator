@@ -13,7 +13,7 @@ This package is for ROS Noetic and not tested for Melodic.
 ### Dependencies
 This software is built on the Robotic Operating System ([ROS](http://wiki.ros.org/ROS/Installation)).
 
-- For Jackal Mobile Robot Dependencies:
+- For Mobile Manipulator Dependencies:
 ```
 - jackal mobile robot dependencies
 $ sudo apt-get install ros-noetic-jackal-*
