@@ -54,7 +54,7 @@ $ cd ~/catkin_ws && catkin_make
 $ rospack profile && rosstack profile
 ```
 
-### jackal_kinova_simulator install
+### jackal_kinova_simulator Installation
 ```
 $ cd ~/catkin_ws/src
 $ git clone -b noetic-devel https://github.com/Sungwwoo/jackal_kinova_simulator.git
