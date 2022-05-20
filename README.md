@@ -28,7 +28,7 @@ $ sudo apt-get install ros-noetic-ros-controllers
 $ sudo apt-get install ros-noetic-moveit
 ```
 
-- ```kortex_driver``` in [ros_kortex](https://github.com/Kinovarobotics/ros_kortex) is required to simulate Gen3 Lite, and [conan](https://docs.conan.io/en/latest/howtos/other_languages_package_manager/python.html) is required to build [ros_kortex](https://github.com/Kinovarobotics/ros_kortex). 
+- ```kortex_driver``` in [ros_kortex](https://github.com/Kinovarobotics/ros_kortex) is required to simulate Gen3 Lite, and [conan](https://docs.conan.io/en/latest/installation.html) is required to build [ros_kortex](https://github.com/Kinovarobotics/ros_kortex). 
 ```
 - conan
 $ python3 -m pip install conan
