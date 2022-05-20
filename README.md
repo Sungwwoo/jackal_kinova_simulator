@@ -75,11 +75,6 @@ $ git clone -b noetic-devel https://github.com/Kinovarobotics/ros_kortex.git
 ```
 
 - If [gazebo_grasp_fix plugin](https://github.com/JenniferBuehler/gazebo-pkgs) is already installed, remove ```gazebo-pkgs``` in ```ros_kortex/third_party``` before running ```catkin_make```.
-```
-$ rm -rf ~/catkin_ws/src/ros_kortex/third_party/gazebo-pkgs
-```
-
-
 
 
 ### jackal_kinova_simulator Installation
