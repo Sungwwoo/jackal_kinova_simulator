@@ -4,16 +4,13 @@
   <name>jackal_kinova_moveit_config</name>
   <version>2.2.2</version>
   <description>
-     An automatically generated package with all the configuration and launch files for using the gen3_lite_gen3_lite_2f with the MoveIt! Motion Planning Framework
+     A Package with all the configuration and launch files for using the gen3_lite_gen3_lite_2f and jackal with the MoveIt! Motion Planning Framework
   </description>
-  <author email="avannobel@kinova.ca">Alexandre Vannobel</author>
-  <maintainer email="avannobel@kinova.ca">Alexandre Vannobel</maintainer>
+  <author email="p1112007@khu.ac.kr">Sungwoo Yang</author>
+  <maintainer email="p1112007@khu.ac.kr">Sungwoo Yang</maintainer>
 
   <license>BSD</license>
 
-  <url type="website">http://moveit.ros.org/</url>
-  <url type="bugtracker">https://github.com/ros-planning/moveit/issues</url>
-  <url type="repository">https://github.com/ros-planning/moveit</url>
 
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>kortex_driver</build_depend>
