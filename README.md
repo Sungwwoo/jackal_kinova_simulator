@@ -3,9 +3,9 @@
 ## Overview
 This is a mobile manipulator simulator package using Gazebo, RViz, MoveIt, move_base.
 
-The model of the mobile manipulator robot was created by combining Kinova Robotics' [Gen3 Lite](https://github.com/Kinovarobotics/ros_kortex) and Clearpath Robotics' [Jackal](https://github.com/jackal/jackal.git).
+The model of the mobile manipulator robot was created by combining [Kinova Robotics' Gen3 Lite](https://github.com/Kinovarobotics/ros_kortex) and [Clearpath Robotics' Jackal](https://github.com/jackal/jackal.git).
 
-This package is for ROS Noetic and not tested for Melodic.
+This package is for ROS Noetic. We are still working for ROS Melodic.
 
 
 ## Installation
@@ -24,7 +24,7 @@ $ sudo apt-get install ros-noetic-ros-controllers
 ```
 
 - To build kortex_driver package included in jackal_kinova_simulator, conan needs to be installed.
-- For detailed information, see [ros_kortex](https://github.com/Kinovarobotics/ros_kortex)
+- For detailed information, see [ros_kortex](https://github.com/Kinovarobotics/ros_kortex).
 ```
 $ python3 -m pip install conan
 $ echo "export CONAN_REVISIONS_ENABLED=1" >> ~/.bashrc
