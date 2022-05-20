@@ -45,8 +45,8 @@ $ git clone -b noetic-devel https://github.com/Kinovarobotics/ros_kortex.git
 $ rm -rf ~/catkin_ws/src/ros_kortex/third_party/gazebo-pkgs
 ```
 
-This package uses same ar_track_alvar package with our [husky_ur3_simulator](https://github.com/QualiaT/husky_ur3_simulator.git) package.
-- For [ar_track_alvar package](https://github.com/QualiaT/ar_track_alvar) install
+
+- This package uses same ar_track_alvar package with our [husky_ur3_simulator](https://github.com/QualiaT/husky_ur3_simulator.git) package. For [ar_track_alvar package](https://github.com/QualiaT/ar_track_alvar) install
 ```
 $ cd ~/catkin_ws/src
 $ git clone -b noetic-devel https://github.com/QualiaT/ar_track_alvar.git
