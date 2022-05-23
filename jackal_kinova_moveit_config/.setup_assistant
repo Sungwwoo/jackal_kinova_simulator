@@ -6,6 +6,6 @@ moveit_setup_assistant_config:
   SRDF:
     relative_path: config/jackal_kinova.srdf
   CONFIG:
-    author_name: Alexandre Vannobel
-    author_email: avannobel@kinova.ca
+    author_name: Sungwoo Yang
+    author_email: p1112007@khu.ac.kr
     generated_timestamp: 1564078352
