@@ -1,11 +1,11 @@
-# jackal_kinova_simulator Noetic version
+# jackal_kinova_simulator Melodic version
 
 ## Overview
 This is a mobile manipulator simulator package using Gazebo, RViz, MoveIt, move_base.
 
 The model of the mobile manipulator robot was created by combining [Kinova Robotics' Gen3 Lite](https://github.com/Kinovarobotics/ros_kortex) and [Clearpath Robotics' Jackal](https://github.com/jackal/jackal.git).
 
-This package is for ROS Noetic. We are still working for ROS Melodic.
+This package is for ROS Melodic.
 
 
 ## Installation
@@ -16,8 +16,8 @@ This software is built on the Robotic Operating System ([ROS](http://wiki.ros.or
 - For Mobile Manipulator Dependencies:
 ```
 - jackal mobile robot dependencies
-$ sudo apt-get install ros-noetic-jackal-*
-$ sudo apt-get install ros-noetic-ddynamic-reconfigure
+$ sudo apt-get install ros-melodic-jackal-*
+$ sudo apt-get install ros-melodic-ddynamic-reconfigure
 
 - ros_controllers
 $ sudo apt-get install ros-noetic-ros-controllers
@@ -31,47 +31,23 @@ $ sudo apt-get install ros-noetic-moveit
 - This package uses same ```ar_track_alvar``` package with our [husky_ur3_simulator](https://github.com/QualiaT/husky_ur3_simulator.git) package. For [ar_track_alvar package](https://github.com/QualiaT/ar_track_alvar) install:
 ```
 $ cd ~/catkin_ws/src
-$ git clone -b noetic-devel https://github.com/QualiaT/ar_track_alvar.git
+$ git clone -b melodic-devel https://github.com/QualiaT/ar_track_alvar.git
 $ cd ~/catkin_ws && catkin_make
 $ rospack profile && rosstack profile
 ```
-```jackal_kinova``` uses two Realsense D435i.
-- For Realsense SDK 2.0 install:
-```
-$ sudo apt-key adv --keyserver keys.gnupg.net --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
-$ sudo add-apt-repository "deb http://librealsense.intel.com/Debian/apt-repo focal main" -u
 
-$ sudo apt-get install librealsense2-dkms
-$ sudo apt-get install librealsense2-utils
-$ sudo apt-get install librealsense2-dev
-$ sudo apt-get install librealsense2-dbg
-
-# test
-$ realsense-viewer
-```
-
-- For Realsense ROS package install:
-```
-$ export ROS_VER=noetic
-$ sudo apt-get install ros-noetic-realsense2-camera
-$ cd ~/catkin_ws/src/
-$ git clone https://github.com/IntelRealSense/realsense-ros.git
-$ cd realsense-ros/
-$ git checkout `git tag | sort -V | grep -P "^2.\d+\.\d+" | tail -1`
-$ cd ~/catkin_ws/
-$ catkin_make
-```
 
 - ```kortex_driver``` in [ros_kortex](https://github.com/Kinovarobotics/ros_kortex) is required to simulate Gen3 Lite, and [conan](https://docs.conan.io/en/latest/installation.html) is required to build [ros_kortex](https://github.com/Kinovarobotics/ros_kortex). 
 ```
 - conan
-$ python3 -m pip install conan
+$ python -m pip install conan
+$ source ~/.profile
 $ echo "export CONAN_REVISIONS_ENABLED=1" >> ~/.bashrc
 $ source ~/.bashrc
 
 - ros_kortex
 $ cd ~/catkin_ws/src
-$ git clone -b noetic-devel https://github.com/Kinovarobotics/ros_kortex.git
+$ git clone -b melodic-devel https://github.com/Kinovarobotics/ros_kortex.git
 ```
 
 - If [gazebo_grasp_fix plugin](https://github.com/JenniferBuehler/gazebo-pkgs) is already installed, remove ```gazebo-pkgs``` in ```ros_kortex/third_party``` before running ```catkin_make```.
@@ -80,7 +56,7 @@ $ git clone -b noetic-devel https://github.com/Kinovarobotics/ros_kortex.git
 ### jackal_kinova_simulator Installation
 ```
 $ cd ~/catkin_ws/src
-$ git clone -b noetic-devel https://github.com/Sungwwoo/jackal_kinova_simulator.git
+$ git clone -b melodic-devel https://github.com/Sungwwoo/jackal_kinova_simulator.git
 
 $ cd ~/catkin_ws && catkin_make
 $ rospack profile && rosstack profile
