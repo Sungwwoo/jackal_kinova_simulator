@@ -51,13 +51,7 @@
                 <xacro:load_gazebo_gripper_transmissions prefix="${prefix}"/>
             </xacro:unless>
 
-            
-            <!-- 
-            <gazebo>
-                <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-                    <legacyModeNS>true</legacyModeNS>
-                </plugin>
-            </gazebo> -->
+
 
         </xacro:if>
     </xacro:macro>

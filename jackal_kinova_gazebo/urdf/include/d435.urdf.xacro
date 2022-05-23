@@ -52,6 +52,7 @@
           <mesh filename="package://jackal_kinova_gazebo/meshes/include/d435.dae"/>
         </geometry>
       </visual>
+
       <inertial>
         <mass value="0.564" />
         <origin xyz="0 0 0" />

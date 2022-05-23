@@ -20,7 +20,6 @@
     <include file="$(find jackal_kinova_gazebo)/launch/description.launch">
     </include>
     <include file="$(find jackal_kinova_gazebo)/launch/control.launch" >
-
         <arg name="arm" value="gen3_lite"/>
         <arg name="dof" value="6"/> 
         <arg name="gripper" value="gen3_lite_2f"/>
@@ -33,7 +32,7 @@
     </include>
 
     <!-- Spawn Jackal_kinova -->
-    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
             args="-urdf -model jackal_kinova -param robot_description -x $(arg x) -y $(arg y) -z $(arg z) -R 0 -P 0 -Y $(arg yaw)" />
 
     

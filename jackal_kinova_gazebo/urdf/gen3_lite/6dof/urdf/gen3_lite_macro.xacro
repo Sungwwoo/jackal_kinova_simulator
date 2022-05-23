@@ -224,7 +224,6 @@
         <mesh filename="package://jackal_kinova_gazebo/meshes/gen3_lite_camera_bracket.STL"/>
       </geometry>
     </collision>
-
   </link>
 
   <joint name="hand_camera_bracket_joint" type="fixed">

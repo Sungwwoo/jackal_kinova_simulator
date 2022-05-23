@@ -8,7 +8,6 @@
   <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/jackal.urdf.xacro"/>
   <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/include/tim571.urdf.xacro"/>
   <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/include/d435.urdf.xacro"/>
-  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/include/d435_collision.urdf.xacro"/>
 
   <!-- include arm urdf -->
   <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/gen3_lite_gen3_lite_2f.xacro">

@@ -16,6 +16,7 @@
         <inertia ixx="${0.0833333 * mass * (width * width + height * height)}" ixy="0.0" ixz="0.0" iyy="${0.0833333 * mass * (length * length + height * height)}" iyz="0.0" izz="${0.0833333 * mass * (length * length + width * width)}" />
       </inertial>
 
+
     </link>
 
     <joint name="${name}_joint" type="fixed">

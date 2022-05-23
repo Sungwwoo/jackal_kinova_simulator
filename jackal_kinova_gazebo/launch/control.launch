@@ -40,7 +40,7 @@
       
   <!-- Load arm controller -->
   <node name="$(arg prefix)$(arg arm)_position_controllers_spawner" pkg="controller_manager" type="spawner" respawn="false"
-      output="screen" if="$(eval arg('dof') == 6)" args=" --stopped
+      output="screen" args=" --stopped
       $(arg prefix)joint_1_position_controller
       $(arg prefix)joint_2_position_controller
       $(arg prefix)joint_3_position_controller
@@ -49,5 +49,5 @@
       $(arg prefix)joint_6_position_controller"/>
 
 
-  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen" />
 </launch>
