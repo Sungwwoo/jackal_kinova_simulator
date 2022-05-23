@@ -16,12 +16,6 @@
         <inertia ixx="${0.0833333 * mass * (width * width + height * height)}" ixy="0.0" ixz="0.0" iyy="${0.0833333 * mass * (length * length + height * height)}" iyz="0.0" izz="${0.0833333 * mass * (length * length + width * width)}" />
       </inertial>
 
-      <collision>
-        <origin xyz="0 0 -0.026" rpy="3.1415926 0 0"/>
-        <geometry>
-          <mesh filename="package://jackal_kinova_gazebo/meshes/include/tim571.stl"/>
-        </geometry>
-      </collision>
     </link>
 
     <joint name="${name}_joint" type="fixed">

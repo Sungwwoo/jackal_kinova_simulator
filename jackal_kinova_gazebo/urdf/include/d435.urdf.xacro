@@ -52,12 +52,6 @@
           <mesh filename="package://jackal_kinova_gazebo/meshes/include/d435.dae"/>
         </geometry>
       </visual>
-      <collision>
-        <origin xyz="0 ${-d435_cam_depth_py} 0" rpy="0 0 0"/>
-        <geometry>
-          <box size="${d435_cam_depth} ${d435_cam_width} ${d435_cam_height}"/>
-        </geometry>
-      </collision>
       <inertial>
         <mass value="0.564" />
         <origin xyz="0 0 0" />

@@ -64,14 +64,15 @@
         <joint name="$(arg prefix)right_finger_bottom_joint" value="-0.09" />
         <joint name="$(arg prefix)right_finger_tip_joint" value="0" />
     </group_state>
-    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="end_effector" parent_link="$(arg prefix)tool_frame" group="arm" />    
-    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
-    <virtual_joint name="floating" type="floating" parent_frame="odom" child_link="base_link" />
     <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
     <passive_joint name="$(arg prefix)right_finger_tip_joint" />
     <passive_joint name="$(arg prefix)left_finger_tip_joint" />
     <passive_joint name="$(arg prefix)left_finger_bottom_joint" />
+
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="end_effector" parent_link="$(arg prefix)tool_frame" group="arm" />
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="floating" type="floating" parent_frame="odom" child_link="base_link"/>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="arm_link" link2="forearm_link" reason="Adjacent"/>
     <disable_collisions link1="arm_link" link2="front_left_wheel_link" reason="Never"/>
@@ -81,19 +82,9 @@
     <disable_collisions link1="arm_link" link2="rear_left_wheel_link" reason="Never"/>
     <disable_collisions link1="arm_link" link2="rear_right_wheel_link" reason="Never"/>
     <disable_collisions link1="arm_link" link2="shoulder_link" reason="Adjacent"/>
-    <disable_collisions link1="base_camera_link" link2="chassis_link" reason="Adjacent"/>
-    <disable_collisions link1="base_camera_link" link2="front_left_wheel_link" reason="Never"/>
-    <disable_collisions link1="base_camera_link" link2="front_right_wheel_link" reason="Never"/>
-    <disable_collisions link1="base_camera_link" link2="gen3_lite_base_link" reason="Adjacent"/>
-    <disable_collisions link1="base_camera_link" link2="laser_link" reason="Adjacent"/>
-    <disable_collisions link1="base_camera_link" link2="rear_left_wheel_link" reason="Never"/>
-    <disable_collisions link1="base_camera_link" link2="rear_right_wheel_link" reason="Never"/>
-    <disable_collisions link1="base_camera_link" link2="shoulder_link" reason="Never"/>
-    <disable_collisions link1="base_camera_link" link2="top_structure" reason="Adjacent"/>
     <disable_collisions link1="chassis_link" link2="front_left_wheel_link" reason="Adjacent"/>
     <disable_collisions link1="chassis_link" link2="front_right_wheel_link" reason="Adjacent"/>
     <disable_collisions link1="chassis_link" link2="gen3_lite_base_link" reason="Adjacent"/>
-    <disable_collisions link1="chassis_link" link2="laser_link" reason="Adjacent"/>
     <disable_collisions link1="chassis_link" link2="rear_left_wheel_link" reason="Adjacent"/>
     <disable_collisions link1="chassis_link" link2="rear_right_wheel_link" reason="Adjacent"/>
     <disable_collisions link1="chassis_link" link2="shoulder_link" reason="Never"/>
@@ -108,39 +99,32 @@
     <disable_collisions link1="forearm_link" link2="upper_wrist_link" reason="Never"/>
     <disable_collisions link1="front_left_wheel_link" link2="front_right_wheel_link" reason="Never"/>
     <disable_collisions link1="front_left_wheel_link" link2="gen3_lite_base_link" reason="Never"/>
-    <disable_collisions link1="front_left_wheel_link" link2="laser_link" reason="Never"/>
     <disable_collisions link1="front_left_wheel_link" link2="rear_left_wheel_link" reason="Never"/>
     <disable_collisions link1="front_left_wheel_link" link2="rear_right_wheel_link" reason="Never"/>
     <disable_collisions link1="front_left_wheel_link" link2="shoulder_link" reason="Never"/>
     <disable_collisions link1="front_left_wheel_link" link2="top_structure" reason="Never"/>
     <disable_collisions link1="front_right_wheel_link" link2="gen3_lite_base_link" reason="Never"/>
-    <disable_collisions link1="front_right_wheel_link" link2="laser_link" reason="Never"/>
     <disable_collisions link1="front_right_wheel_link" link2="rear_left_wheel_link" reason="Never"/>
     <disable_collisions link1="front_right_wheel_link" link2="rear_right_wheel_link" reason="Never"/>
     <disable_collisions link1="front_right_wheel_link" link2="shoulder_link" reason="Never"/>
     <disable_collisions link1="front_right_wheel_link" link2="top_structure" reason="Never"/>
-    <disable_collisions link1="gen3_lite_base_link" link2="laser_link" reason="Adjacent"/>
     <disable_collisions link1="gen3_lite_base_link" link2="rear_left_wheel_link" reason="Never"/>
     <disable_collisions link1="gen3_lite_base_link" link2="rear_right_wheel_link" reason="Never"/>
     <disable_collisions link1="gen3_lite_base_link" link2="shoulder_link" reason="Adjacent"/>
     <disable_collisions link1="gen3_lite_base_link" link2="top_structure" reason="Adjacent"/>
-    <disable_collisions link1="gripper_base_link" link2="hand_camera_link" reason="Adjacent"/>
+    <disable_collisions link1="gripper_base_link" link2="hand_camera_bracket" reason="Adjacent"/>
     <disable_collisions link1="gripper_base_link" link2="left_finger_dist_link" reason="Never"/>
     <disable_collisions link1="gripper_base_link" link2="left_finger_prox_link" reason="Adjacent"/>
     <disable_collisions link1="gripper_base_link" link2="lower_wrist_link" reason="Never"/>
     <disable_collisions link1="gripper_base_link" link2="right_finger_dist_link" reason="Never"/>
     <disable_collisions link1="gripper_base_link" link2="right_finger_prox_link" reason="Adjacent"/>
     <disable_collisions link1="gripper_base_link" link2="upper_wrist_link" reason="Adjacent"/>
-    <disable_collisions link1="hand_camera_link" link2="left_finger_dist_link" reason="Never"/>
-    <disable_collisions link1="hand_camera_link" link2="left_finger_prox_link" reason="Never"/>
-    <disable_collisions link1="hand_camera_link" link2="lower_wrist_link" reason="Never"/>
-    <disable_collisions link1="hand_camera_link" link2="right_finger_dist_link" reason="Never"/>
-    <disable_collisions link1="hand_camera_link" link2="right_finger_prox_link" reason="Never"/>
-    <disable_collisions link1="hand_camera_link" link2="upper_wrist_link" reason="Adjacent"/>
-    <disable_collisions link1="laser_link" link2="rear_left_wheel_link" reason="Never"/>
-    <disable_collisions link1="laser_link" link2="rear_right_wheel_link" reason="Never"/>
-    <disable_collisions link1="laser_link" link2="shoulder_link" reason="Never"/>
-    <disable_collisions link1="laser_link" link2="top_structure" reason="Adjacent"/>
+    <disable_collisions link1="hand_camera_bracket" link2="left_finger_dist_link" reason="Never"/>
+    <disable_collisions link1="hand_camera_bracket" link2="left_finger_prox_link" reason="Never"/>
+    <disable_collisions link1="hand_camera_bracket" link2="lower_wrist_link" reason="Never"/>
+    <disable_collisions link1="hand_camera_bracket" link2="right_finger_dist_link" reason="Never"/>
+    <disable_collisions link1="hand_camera_bracket" link2="right_finger_prox_link" reason="Never"/>
+    <disable_collisions link1="hand_camera_bracket" link2="upper_wrist_link" reason="Adjacent"/>
     <disable_collisions link1="left_finger_dist_link" link2="left_finger_prox_link" reason="Adjacent"/>
     <disable_collisions link1="left_finger_dist_link" link2="lower_wrist_link" reason="Never"/>
     <disable_collisions link1="left_finger_dist_link" link2="right_finger_dist_link" reason="Never"/>

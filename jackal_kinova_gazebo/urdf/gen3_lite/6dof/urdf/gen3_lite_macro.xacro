@@ -218,6 +218,13 @@
         <color rgba="0.75 0.75 0.75 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="-0.175 -0.01 -1.15" rpy="${PI/2} 0 ${PI/2}"/>
+      <geometry>
+        <mesh filename="package://jackal_kinova_gazebo/meshes/gen3_lite_camera_bracket.STL"/>
+      </geometry>
+    </collision>
+
   </link>
 
   <joint name="hand_camera_bracket_joint" type="fixed">
