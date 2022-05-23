@@ -5,7 +5,7 @@ This is a mobile manipulator simulator package using Gazebo, RViz, MoveIt, move_
 
 The model of the mobile manipulator robot was created by combining [Kinova Robotics' Gen3 Lite](https://github.com/Kinovarobotics/ros_kortex) and [Clearpath Robotics' Jackal](https://github.com/jackal/jackal.git).
 
-This package is for ROS Noetic. We are still working for ROS Melodic.
+This package is for ROS Noetic.
 
 
 ## Installation
