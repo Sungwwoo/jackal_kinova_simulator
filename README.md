@@ -20,12 +20,12 @@ $ sudo apt-get install ros-melodic-jackal-*
 $ sudo apt-get install ros-melodic-ddynamic-reconfigure
 
 - ros_controllers
-$ sudo apt-get install ros-noetic-ros-controllers
+$ sudo apt-get install ros-melodic-ros-controllers
 ```
 
 - For [MoveIt](https://moveit.ros.org/) install:
 ```
-$ sudo apt-get install ros-noetic-moveit
+$ sudo apt-get install ros-melodic-moveit
 ```
 
 - This package uses same ```ar_track_alvar``` package with our [husky_ur3_simulator](https://github.com/QualiaT/husky_ur3_simulator.git) package. For [ar_track_alvar package](https://github.com/QualiaT/ar_track_alvar) install:
