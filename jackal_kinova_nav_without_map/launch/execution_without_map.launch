@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-
-<launch>
-   
-  <include file="$(find jackal_kinova_nav_without_map)/launch/move_base.launch">
-    <arg name="no_static_map" value="true"/>
-  </include>
-  
-</launch>
