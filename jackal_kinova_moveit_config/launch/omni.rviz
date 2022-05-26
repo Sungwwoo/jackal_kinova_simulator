@@ -6,13 +6,16 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /Map1
+        - /global_costmap1
+        - /local_costmap1
         - /odom1/Frames1
         - /base_link1/Tree1
         - /ee_link1/Frames1
         - /base_pointcloud1/Auto Size1
         - /hand_pointcloud1/Auto Size1
       Splitter Ratio: 0.5
-    Tree Height: 334
+    Tree Height: 283
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -226,7 +229,6 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         laser_link:
           Alpha: 1
           Show Axes: false
@@ -499,7 +501,6 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
-            Value: true
           laser_link:
             Alpha: 1
             Show Axes: false
@@ -781,7 +782,6 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
-            Value: true
           laser_link:
             Alpha: 1
             Show Axes: false
@@ -866,7 +866,7 @@ Visualization Manager:
     - Alpha: 0.699999988079071
       Class: rviz/Map
       Color Scheme: map
-      Draw Behind: false
+      Draw Behind: true
       Enabled: true
       Name: Map
       Topic: /map
@@ -876,7 +876,7 @@ Visualization Manager:
     - Alpha: 0.699999988079071
       Class: rviz/Map
       Color Scheme: costmap
-      Draw Behind: false
+      Draw Behind: true
       Enabled: true
       Name: global_costmap
       Topic: /move_base/global_costmap/costmap
@@ -886,7 +886,7 @@ Visualization Manager:
     - Alpha: 0.699999988079071
       Class: rviz/Map
       Color Scheme: costmap
-      Draw Behind: false
+      Draw Behind: true
       Enabled: true
       Name: local_costmap
       Topic: /move_base/local_costmap/costmap
@@ -903,7 +903,7 @@ Visualization Manager:
       Length: 0.30000001192092896
       Line Style: Lines
       Line Width: 0.029999999329447746
-      Name: Path
+      Name: global_plan
       Offset:
         X: 0
         Y: 0
@@ -915,6 +915,30 @@ Visualization Manager:
       Shaft Diameter: 0.10000000149011612
       Shaft Length: 0.10000000149011612
       Topic: /move_base/NavfnROS/plan
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz/Path
+      Color: 255; 255; 0
+      Enabled: true
+      Head Diameter: 0.30000001192092896
+      Head Length: 0.20000000298023224
+      Length: 0.30000001192092896
+      Line Style: Lines
+      Line Width: 0.029999999329447746
+      Name: local_plan
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 255; 85; 255
+      Pose Style: None
+      Queue Size: 10
+      Radius: 0.029999999329447746
+      Shaft Diameter: 0.10000000149011612
+      Shaft Length: 0.10000000149011612
+      Topic: /move_base/DWAPlannerROS/local_plan
       Unreliable: false
       Value: true
     - Class: rviz/InteractiveMarkers
@@ -1013,6 +1037,8 @@ Visualization Manager:
           Value: false
         lower_wrist_link:
           Value: false
+        map:
+          Value: true
         mid_mount:
           Value: false
         navsat_link:
@@ -1046,85 +1072,86 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        odom:
-          base_link:
-            base_camera_bottom_screw_frame:
-              base_camera_link:
-                base_camera_color_frame:
-                  base_camera_color_optical_frame:
+        map:
+          odom:
+            base_link:
+              base_camera_bottom_screw_frame:
+                base_camera_link:
+                  base_camera_color_frame:
+                    base_camera_color_optical_frame:
+                      {}
+                  base_camera_depth_frame:
+                    base_camera_depth_optical_frame:
+                      {}
+                  base_camera_gazebo:
                     {}
-                base_camera_depth_frame:
-                  base_camera_depth_optical_frame:
-                    {}
-                base_camera_gazebo:
+                  base_camera_infra1_frame:
+                    base_camera_infra1_optical_frame:
+                      {}
+                  base_camera_infra2_frame:
+                    base_camera_infra2_optical_frame:
+                      {}
+              chassis_link:
+                front_fender_link:
                   {}
-                base_camera_infra1_frame:
-                  base_camera_infra1_optical_frame:
-                    {}
-                base_camera_infra2_frame:
-                  base_camera_infra2_optical_frame:
-                    {}
-            chassis_link:
-              front_fender_link:
-                {}
-              front_left_wheel_link:
-                {}
-              front_right_wheel_link:
-                {}
-              mid_mount:
-                front_mount:
+                front_left_wheel_link:
                   {}
-                rear_mount:
+                front_right_wheel_link:
                   {}
-              rear_fender_link:
-                {}
-              rear_left_wheel_link:
-                {}
-              rear_right_wheel_link:
-                {}
-            gen3_lite_base_link:
-              shoulder_link:
-                arm_link:
-                  forearm_link:
-                    lower_wrist_link:
-                      upper_wrist_link:
-                        end_effector_link:
-                          dummy_link:
-                            gripper_base_link:
-                              left_finger_prox_link:
-                                left_finger_dist_link:
-                                  {}
-                              right_finger_prox_link:
-                                right_finger_dist_link:
-                                  {}
-                            tool_frame:
-                              {}
-                          hand_camera_bracket:
-                            hand_camera_bottom_screw_frame:
-                              hand_camera_link:
-                                hand_camera_color_frame:
-                                  hand_camera_color_optical_frame:
+                mid_mount:
+                  front_mount:
+                    {}
+                  rear_mount:
+                    {}
+                rear_fender_link:
+                  {}
+                rear_left_wheel_link:
+                  {}
+                rear_right_wheel_link:
+                  {}
+              gen3_lite_base_link:
+                shoulder_link:
+                  arm_link:
+                    forearm_link:
+                      lower_wrist_link:
+                        upper_wrist_link:
+                          end_effector_link:
+                            dummy_link:
+                              gripper_base_link:
+                                left_finger_prox_link:
+                                  left_finger_dist_link:
                                     {}
-                                hand_camera_depth_frame:
-                                  hand_camera_depth_optical_frame:
+                                right_finger_prox_link:
+                                  right_finger_dist_link:
                                     {}
-                                hand_camera_gazebo:
-                                  {}
-                                hand_camera_infra1_frame:
-                                  hand_camera_infra1_optical_frame:
+                              tool_frame:
+                                {}
+                            hand_camera_bracket:
+                              hand_camera_bottom_screw_frame:
+                                hand_camera_link:
+                                  hand_camera_color_frame:
+                                    hand_camera_color_optical_frame:
+                                      {}
+                                  hand_camera_depth_frame:
+                                    hand_camera_depth_optical_frame:
+                                      {}
+                                  hand_camera_gazebo:
                                     {}
-                                hand_camera_infra2_frame:
-                                  hand_camera_infra2_optical_frame:
-                                    {}
-            imu_link:
-              {}
-            laser_base_link:
-              laser_link:
+                                  hand_camera_infra1_frame:
+                                    hand_camera_infra1_optical_frame:
+                                      {}
+                                  hand_camera_infra2_frame:
+                                    hand_camera_infra2_optical_frame:
+                                      {}
+              imu_link:
                 {}
-            navsat_link:
-              {}
-            top_structure:
-              {}
+              laser_base_link:
+                laser_link:
+                  {}
+              navsat_link:
+                {}
+              top_structure:
+                {}
       Update Interval: 0
       Value: true
     - Class: rviz/TF
@@ -1214,6 +1241,8 @@ Visualization Manager:
           Value: false
         lower_wrist_link:
           Value: false
+        map:
+          Value: true
         mid_mount:
           Value: false
         navsat_link:
@@ -1247,85 +1276,86 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        odom:
-          base_link:
-            base_camera_bottom_screw_frame:
-              base_camera_link:
-                base_camera_color_frame:
-                  base_camera_color_optical_frame:
+        map:
+          odom:
+            base_link:
+              base_camera_bottom_screw_frame:
+                base_camera_link:
+                  base_camera_color_frame:
+                    base_camera_color_optical_frame:
+                      {}
+                  base_camera_depth_frame:
+                    base_camera_depth_optical_frame:
+                      {}
+                  base_camera_gazebo:
                     {}
-                base_camera_depth_frame:
-                  base_camera_depth_optical_frame:
-                    {}
-                base_camera_gazebo:
+                  base_camera_infra1_frame:
+                    base_camera_infra1_optical_frame:
+                      {}
+                  base_camera_infra2_frame:
+                    base_camera_infra2_optical_frame:
+                      {}
+              chassis_link:
+                front_fender_link:
                   {}
-                base_camera_infra1_frame:
-                  base_camera_infra1_optical_frame:
-                    {}
-                base_camera_infra2_frame:
-                  base_camera_infra2_optical_frame:
-                    {}
-            chassis_link:
-              front_fender_link:
-                {}
-              front_left_wheel_link:
-                {}
-              front_right_wheel_link:
-                {}
-              mid_mount:
-                front_mount:
+                front_left_wheel_link:
                   {}
-                rear_mount:
+                front_right_wheel_link:
                   {}
-              rear_fender_link:
-                {}
-              rear_left_wheel_link:
-                {}
-              rear_right_wheel_link:
-                {}
-            gen3_lite_base_link:
-              shoulder_link:
-                arm_link:
-                  forearm_link:
-                    lower_wrist_link:
-                      upper_wrist_link:
-                        end_effector_link:
-                          dummy_link:
-                            gripper_base_link:
-                              left_finger_prox_link:
-                                left_finger_dist_link:
-                                  {}
-                              right_finger_prox_link:
-                                right_finger_dist_link:
-                                  {}
-                            tool_frame:
-                              {}
-                          hand_camera_bracket:
-                            hand_camera_bottom_screw_frame:
-                              hand_camera_link:
-                                hand_camera_color_frame:
-                                  hand_camera_color_optical_frame:
+                mid_mount:
+                  front_mount:
+                    {}
+                  rear_mount:
+                    {}
+                rear_fender_link:
+                  {}
+                rear_left_wheel_link:
+                  {}
+                rear_right_wheel_link:
+                  {}
+              gen3_lite_base_link:
+                shoulder_link:
+                  arm_link:
+                    forearm_link:
+                      lower_wrist_link:
+                        upper_wrist_link:
+                          end_effector_link:
+                            dummy_link:
+                              gripper_base_link:
+                                left_finger_prox_link:
+                                  left_finger_dist_link:
                                     {}
-                                hand_camera_depth_frame:
-                                  hand_camera_depth_optical_frame:
+                                right_finger_prox_link:
+                                  right_finger_dist_link:
                                     {}
-                                hand_camera_gazebo:
-                                  {}
-                                hand_camera_infra1_frame:
-                                  hand_camera_infra1_optical_frame:
+                              tool_frame:
+                                {}
+                            hand_camera_bracket:
+                              hand_camera_bottom_screw_frame:
+                                hand_camera_link:
+                                  hand_camera_color_frame:
+                                    hand_camera_color_optical_frame:
+                                      {}
+                                  hand_camera_depth_frame:
+                                    hand_camera_depth_optical_frame:
+                                      {}
+                                  hand_camera_gazebo:
                                     {}
-                                hand_camera_infra2_frame:
-                                  hand_camera_infra2_optical_frame:
-                                    {}
-            imu_link:
-              {}
-            laser_base_link:
-              laser_link:
+                                  hand_camera_infra1_frame:
+                                    hand_camera_infra1_optical_frame:
+                                      {}
+                                  hand_camera_infra2_frame:
+                                    hand_camera_infra2_optical_frame:
+                                      {}
+              imu_link:
                 {}
-            navsat_link:
-              {}
-            top_structure:
-              {}
+              laser_base_link:
+                laser_link:
+                  {}
+              navsat_link:
+                {}
+              top_structure:
+                {}
       Update Interval: 0
       Value: true
     - Class: rviz/TF
@@ -1415,6 +1445,8 @@ Visualization Manager:
           Value: false
         lower_wrist_link:
           Value: false
+        map:
+          Value: true
         mid_mount:
           Value: false
         navsat_link:
@@ -1448,85 +1480,86 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        odom:
-          base_link:
-            base_camera_bottom_screw_frame:
-              base_camera_link:
-                base_camera_color_frame:
-                  base_camera_color_optical_frame:
+        map:
+          odom:
+            base_link:
+              base_camera_bottom_screw_frame:
+                base_camera_link:
+                  base_camera_color_frame:
+                    base_camera_color_optical_frame:
+                      {}
+                  base_camera_depth_frame:
+                    base_camera_depth_optical_frame:
+                      {}
+                  base_camera_gazebo:
                     {}
-                base_camera_depth_frame:
-                  base_camera_depth_optical_frame:
-                    {}
-                base_camera_gazebo:
+                  base_camera_infra1_frame:
+                    base_camera_infra1_optical_frame:
+                      {}
+                  base_camera_infra2_frame:
+                    base_camera_infra2_optical_frame:
+                      {}
+              chassis_link:
+                front_fender_link:
                   {}
-                base_camera_infra1_frame:
-                  base_camera_infra1_optical_frame:
-                    {}
-                base_camera_infra2_frame:
-                  base_camera_infra2_optical_frame:
-                    {}
-            chassis_link:
-              front_fender_link:
-                {}
-              front_left_wheel_link:
-                {}
-              front_right_wheel_link:
-                {}
-              mid_mount:
-                front_mount:
+                front_left_wheel_link:
                   {}
-                rear_mount:
+                front_right_wheel_link:
                   {}
-              rear_fender_link:
-                {}
-              rear_left_wheel_link:
-                {}
-              rear_right_wheel_link:
-                {}
-            gen3_lite_base_link:
-              shoulder_link:
-                arm_link:
-                  forearm_link:
-                    lower_wrist_link:
-                      upper_wrist_link:
-                        end_effector_link:
-                          dummy_link:
-                            gripper_base_link:
-                              left_finger_prox_link:
-                                left_finger_dist_link:
-                                  {}
-                              right_finger_prox_link:
-                                right_finger_dist_link:
-                                  {}
-                            tool_frame:
-                              {}
-                          hand_camera_bracket:
-                            hand_camera_bottom_screw_frame:
-                              hand_camera_link:
-                                hand_camera_color_frame:
-                                  hand_camera_color_optical_frame:
+                mid_mount:
+                  front_mount:
+                    {}
+                  rear_mount:
+                    {}
+                rear_fender_link:
+                  {}
+                rear_left_wheel_link:
+                  {}
+                rear_right_wheel_link:
+                  {}
+              gen3_lite_base_link:
+                shoulder_link:
+                  arm_link:
+                    forearm_link:
+                      lower_wrist_link:
+                        upper_wrist_link:
+                          end_effector_link:
+                            dummy_link:
+                              gripper_base_link:
+                                left_finger_prox_link:
+                                  left_finger_dist_link:
                                     {}
-                                hand_camera_depth_frame:
-                                  hand_camera_depth_optical_frame:
+                                right_finger_prox_link:
+                                  right_finger_dist_link:
                                     {}
-                                hand_camera_gazebo:
-                                  {}
-                                hand_camera_infra1_frame:
-                                  hand_camera_infra1_optical_frame:
+                              tool_frame:
+                                {}
+                            hand_camera_bracket:
+                              hand_camera_bottom_screw_frame:
+                                hand_camera_link:
+                                  hand_camera_color_frame:
+                                    hand_camera_color_optical_frame:
+                                      {}
+                                  hand_camera_depth_frame:
+                                    hand_camera_depth_optical_frame:
+                                      {}
+                                  hand_camera_gazebo:
                                     {}
-                                hand_camera_infra2_frame:
-                                  hand_camera_infra2_optical_frame:
-                                    {}
-            imu_link:
-              {}
-            laser_base_link:
-              laser_link:
+                                  hand_camera_infra1_frame:
+                                    hand_camera_infra1_optical_frame:
+                                      {}
+                                  hand_camera_infra2_frame:
+                                    hand_camera_infra2_optical_frame:
+                                      {}
+              imu_link:
                 {}
-            navsat_link:
-              {}
-            top_structure:
-              {}
+              laser_base_link:
+                laser_link:
+                  {}
+              navsat_link:
+                {}
+              top_structure:
+                {}
       Update Interval: 0
       Value: true
     - Class: rviz/Camera
@@ -1544,16 +1577,18 @@ Visualization Manager:
         LaserScan: true
         Map: true
         MotionPlanning: true
-        Path: true
         RobotModel: true
         Value: true
         base_camera: true
         base_link: true
         base_pointcloud: true
         ee_link: true
+        footprint: true
         global_costmap: true
+        global_plan: true
         hand_pointcloud: true
         local_costmap: true
+        local_plan: true
         odom: true
         twist_controller: true
       Zoom Factor: 1
@@ -1572,16 +1607,18 @@ Visualization Manager:
         LaserScan: true
         Map: true
         MotionPlanning: true
-        Path: true
         RobotModel: true
         Value: true
         base_link: true
         base_pointcloud: true
         ee_link: true
+        footprint: true
         global_costmap: true
+        global_plan: true
         hand_camera: true
         hand_pointcloud: true
         local_costmap: true
+        local_plan: true
         odom: true
         twist_controller: true
       Zoom Factor: 1
@@ -1685,6 +1722,15 @@ Visualization Manager:
       Use Fixed Frame: true
       Use rainbow: true
       Value: false
+    - Alpha: 1
+      Class: rviz/Polygon
+      Color: 25; 255; 0
+      Enabled: true
+      Name: footprint
+      Queue Size: 10
+      Topic: /move_base/global_costmap/footprint
+      Unreliable: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -1713,7 +1759,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 6.262093544006348
+      Distance: 19.583484649658203
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -1721,17 +1767,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0.7670817971229553
-        Y: -1.1582107543945312
-        Z: 0.8533177375793457
+        X: 1.379845380783081
+        Y: 1.753262996673584
+        Z: 1.5901339054107666
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.3625953793525696
+      Pitch: 1.5697963237762451
       Target Frame: <Fixed Frame>
-      Yaw: 3.5421783924102783
+      Yaw: 0.008993989787995815
     Saved: ~
 Window Geometry:
   Displays:
@@ -1743,7 +1789,7 @@ Window Geometry:
     collapsed: false
   MotionPlanning - Trajectory Slider:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd0000000400000000000001f30000035ffc020000000dfb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d000001d1000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb000000280020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000000000000000fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e00670100000214000001880000017d00fffffffb000000280020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000000000000000fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067000000029a000001880000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff000000160000001600000001000001670000035ffc0200000005fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003d0000010e000000a400fffffffb0000001600680061006e0064005f00630061006d0065007200610100000151000001220000001600fffffffb000000160062006100730065005f00630061006d0065007200610100000279000001230000001600fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000075400000039fc0100000002fb0000000800540069006d0065010000000000000754000002eb00fffffffb0000000800540069006d00650100000000000004500000000000000000000003ee0000035f00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000400000000000001f30000035ffc020000000dfb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d0000019e000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb000000280020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000000000000000fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e006701000001e1000001bb0000017d00fffffffb000000280020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000000000000000fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067000000029a000001880000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff000000160000001600000001000001670000035ffc0200000005fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003d0000010e000000a400fffffffb0000001600680061006e0064005f00630061006d0065007200610100000151000001220000001600fffffffb000000160062006100730065005f00630061006d0065007200610100000279000001230000001600fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000075400000039fc0100000002fb0000000800540069006d0065010000000000000754000002eb00fffffffb0000000800540069006d00650100000000000004500000000000000000000003ee0000035f00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -1754,7 +1800,7 @@ Window Geometry:
     collapsed: false
   Width: 1876
   X: 0
-  Y: 147
+  Y: 340
   base_camera:
     collapsed: false
   hand_camera:
