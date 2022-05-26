@@ -875,7 +875,7 @@ Visualization Manager:
       Class: rviz/Map
       Color Scheme: costmap
       Draw Behind: true
-      Enabled: false
+      Enabled: true
       Name: global_costmap
       Topic: /move_base/global_costmap/costmap
       Unreliable: false
