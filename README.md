@@ -66,8 +66,9 @@ $ catkin_make
 ```
 - conan
 $ python3 -m pip install conan
-# if catkin_make fales, try:
+# if catkin_make fails, try:
 $ sudo python3 -m pip install conan
+
 $ echo "export CONAN_REVISIONS_ENABLED=1" >> ~/.bashrc
 $ source ~/.bashrc
 
