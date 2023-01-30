@@ -1,14 +1,18 @@
 <launch>
 
   <arg name="scan_topic" default="/scan" />
-
+  <arg name="first" default="JK_01"/>
+  
+  <group ns="$(arg first)">
   <!--- Run gmapping -->
-  <include file="$(find jackal_kinova_navigation)/launch/include/gmapping.launch">
-    <arg name="scan_topic"    value="$(arg scan_topic)" />
-  </include>
+    <include file="$(find jackal_kinova_navigation)/launch/include/gmapping.launch">
+      <arg name="scan_topic"    value="$(arg first)/$(arg scan_topic)" />          
+      <arg name="ns" value="$(arg first)"/>
+    </include>
 
-
-  <!--- Run Move Base -->
-  <include file="$(find jackal_kinova_navigation)/launch/include/move_base.launch" />
-
+    <!--- Run Move Base -->
+    <include file="$(find jackal_kinova_navigation)/launch/include/move_base.launch">
+          <arg name="ns" value="$(arg first)"/>
+    </include>
+  </group>
 </launch>

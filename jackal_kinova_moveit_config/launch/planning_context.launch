@@ -6,6 +6,7 @@
   <arg name="robot_description" default="robot_description"/>
 
   <!-- The joint and link names prefix used in kortex_description -->
+  <arg name="ns" default=""/>
   <arg name="prefix" default=""/>
 
   <!-- Use the slower (default) joint speed and acceleration limits, or the hard limits (fastest) -->
@@ -13,7 +14,9 @@
 
   <!-- The semantic description that corresponds to the URDF -->
   <!-- No prefix -->
-  <param name="$(arg robot_description)_semantic" command="$(find xacro)/xacro --inorder $(find jackal_kinova_moveit_config)/config/jackal_kinova.srdf"/>
+  <param name="$(arg robot_description)_semantic" command="$(find xacro)/xacro --inorder $(find jackal_kinova_moveit_config)/config/jackal_kinova.srdf.xacro ns:=$(arg ns) prefix:=$(arg prefix)">
+
+  </param>
   <!-- Load updated joint limits (override information from URDF) -->
   <group ns="$(arg robot_description)_planning">
     <rosparam command="load" file="$(find jackal_kinova_moveit_config)/config/default_joint_limits.yaml" unless="$(arg use_hard_limits)" subst_value="true"/>
@@ -21,7 +24,7 @@
   </group>
 
   <!-- Load default settings for kinematics; these settings are overridden by settings in a node's namespace -->
-  <group ns="$(arg robot_description)_kinematics">
+  <group ns="$(arg prefix)">
     <rosparam command="load" file="$(find jackal_kinova_moveit_config)/config/kinematics.yaml"/>
   </group>
 

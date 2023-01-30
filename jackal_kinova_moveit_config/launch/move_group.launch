@@ -5,10 +5,12 @@
   <arg name="use_hard_limits" default="false"/>
 
   <!-- The joint and link names prefix used in kortex_description -->
+  <arg name="ns" default=""/>
   <arg name="prefix" default=""/>
 
   <include file="$(find jackal_kinova_moveit_config)/launch/planning_context.launch">
     <arg name="use_hard_limits" value="$(arg use_hard_limits)"/>
+    <arg name="ns" value="$(arg ns)"/>
     <arg name="prefix" value="$(arg prefix)"/>
   </include>
 

@@ -14,6 +14,9 @@
     <arg name="sim" value="true"/>
   </xacro:include>
 
+  <!-- Bring in simulation data for Gazebo. -->
+  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/jackal.gazebo" >
+  </xacro:include>
   <!-- lidar, base_camera mount -->
   <link name="top_structure">
     <visual>
@@ -42,7 +45,7 @@
   <joint name="gen3_lite_joint" type="fixed">
     <parent link="base_link"/>
     <child link="gen3_lite_base_link"/>
-    <origin xyz="0.01 0 0.214" rpy="0 0 0"/>
+    <origin xyz="0.01 0 0.25" rpy="0 0 0"/>
   </joint>
 
   <xacro:sensor_d435 parent="base_link" name="base_camera">

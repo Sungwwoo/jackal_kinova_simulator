@@ -1,0 +1,67 @@
+<launch>
+
+
+  <arg name="arm" default="gen3_lite"/>
+  <arg name="dof" default="6"/> 
+  <arg name="gripper" default="gen3_lite_2f"/>
+  <arg name="robot_name" default=""/>
+  <arg name="ns" default=""/>
+  <arg name="prefix" default=""/>
+  <arg name="cyclic_data_publish_rate" default="40"/> <!--Hz-->
+
+  <rosparam command="load" file="$(find jackal_kinova_gazebo)/config/control_multi.yaml" subst_value="true">
+    <arg name="prefix" value="$(arg prefix)"/>
+  </rosparam>
+  <param name="jackal_velocity_controller/base_frame_id" value="$(arg ns)/base_link"/>
+
+  <!-- Load jackal controller -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner"
+        args="jackal_joint_publisher jackal_velocity_controller" />
+
+
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization">
+    <rosparam command="load" file="$(find jackal_kinova_gazebo)/config/robot_localization.yaml" />
+    <param name="base_link_frame" value="$(arg ns)/base_link"/>
+    <param name="odom_frame" value="$(arg ns)/odom"/>
+    <param name="world_frame" value="$(arg ns)/odom"/>
+  </node>
+
+  <node pkg="twist_mux" type="twist_mux" name="twist_mux">
+    <rosparam command="load" file="$(find jackal_kinova_gazebo)/config/twist_mux.yaml" />
+    <remap from="cmd_vel_out" to="jackal_velocity_controller/cmd_vel"/>
+  </node>
+
+  <group if="$(optenv JACKAL_CONTROL_EXTRAS 0)" >
+    <rosparam command="load" file="$(env JACKAL_CONTROL_EXTRAS_PATH)" subst_value="true" />
+  </group>
+
+  <!-- Load gen3_lite controllers -->
+
+  <!-- Load controller configuration file -->
+  <rosparam file="$(find jackal_kinova_gazebo)/config/joint_position_controllers.yaml" command="load" subst_value="true">
+    <arg name="prefix" value="$(arg prefix)"/>
+  </rosparam>
+  <rosparam file="$(find jackal_kinova_gazebo)/config/gripper_action_controller_parameters.yaml" command="load" subst_value="true">
+    <arg name="prefix" value="$(arg prefix)"/>
+  </rosparam>
+  <!-- Load gripper controller -->
+  <node name="$(arg ns)_$(arg arm)_controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+      output="screen" args="$(arg prefix)$(arg arm)_joint_trajectory_controller $(arg prefix)joint_state_controller $(arg prefix)$(arg gripper)_gripper_controller"/>        
+      
+  <!-- Load arm controller -->
+  <node name="$(arg ns)_$(arg arm)_position_controllers_spawner" pkg="controller_manager" type="spawner" respawn="false"
+      output="screen" if="$(eval arg('dof') == 6)" args=" --stopped
+      $(arg prefix)joint_1_position_controller
+      $(arg prefix)joint_2_position_controller
+      $(arg prefix)joint_3_position_controller
+      $(arg prefix)joint_4_position_controller
+      $(arg prefix)joint_5_position_controller
+      $(arg prefix)joint_6_position_controller"/>
+
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <!-- <remap from="robot_description" to="$(arg ns)_robot_description"/> -->
+    <!-- <param name="tf_prefix" value="$(arg ns)"/> -->
+  </node>
+
+</launch>

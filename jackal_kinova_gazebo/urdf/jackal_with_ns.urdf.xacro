@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <robot name="jackal" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:arg name="ns" default="JK_01"/>
   <xacro:property name="PI" value="3.1415926535897931" />
 
   <xacro:property name="wheelbase" value="0.262" />
@@ -60,7 +61,7 @@
     </gazebo>
 
     <joint name="${prefix}_wheel" type="continuous">
-      <parent link="chassis_link"/>
+      <parent link="$(arg ns)chassis_link"/>
       <child link="${prefix}_wheel_link" />
       <xacro:insert_block name="joint_pose" />
       <axis xyz="0 1 0" />
@@ -79,28 +80,28 @@
     </transmission>
   </xacro:macro>
 
-  <xacro:wheel prefix="front_left">
+  <xacro:wheel prefix="$(arg ns)front_left">
     <origin xyz="${wheelbase/2} ${track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
   </xacro:wheel>
-  <xacro:wheel prefix="front_right">
+  <xacro:wheel prefix="$(arg ns)front_right">
     <origin xyz="${wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
   </xacro:wheel>
-  <xacro:wheel prefix="rear_left">
+  <xacro:wheel prefix="$(arg ns)rear_left">
     <origin xyz="${-wheelbase/2} ${track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
   </xacro:wheel>
-  <xacro:wheel prefix="rear_right">
+  <xacro:wheel prefix="$(arg ns)rear_right">
     <origin xyz="${-wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
   </xacro:wheel>
 
-  <link name="base_link"></link>
+  <link name="$(arg ns)base_link"></link>
 
-  <joint name="base_link_joint" type="fixed">
+  <joint name="$(arg ns)base_link_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0" />
-    <parent link="base_link"/>
-    <child link="chassis_link" />
+    <parent link="$(arg ns)base_link"/>
+    <child link="$(arg ns)chassis_link" />
   </joint>
 
-  <link name="chassis_link">
+  <link name="$(arg ns)chassis_link">
     <visual>
       <origin xyz="0 0 ${footprint_vertical_offset}" rpy="${PI/2} 0 ${PI/2}"/>
       <geometry>
@@ -128,7 +129,7 @@
   </link>
 
   <xacro:unless value="$(optenv JACKAL_FRONT_ACCESSORY_FENDER 0)">
-    <link name="front_fender_link">
+    <link name="$(arg ns)front_fender_link">
       <visual>
         <geometry>
           <mesh filename="package://jackal_kinova_gazebo/meshes/jackal-fender.stl"/>
@@ -139,7 +140,7 @@
   </xacro:unless>
 
   <xacro:if value="$(optenv JACKAL_FRONT_ACCESSORY_FENDER 0)">
-    <link name="front_fender_link">
+    <link name="$(arg ns)front_fender_link">
       <visual>
         <geometry>
           <mesh filename="package://jackal_kinova_gazebo/meshes/accessory_fender.stl"/>
@@ -148,22 +149,22 @@
       </visual>
     </link>
 
-    <link name="front_fender_accessory_link"/>
-    <joint name="front_fender_accessory_joint" type="fixed">
+    <link name="$(arg ns)front_fender_accessory_link"/>
+    <joint name="$(arg ns)front_fender_accessory_joint" type="fixed">
       <origin xyz="0.25629 0 0.07455" rpy="${PI} 0 0" />
-      <parent link="front_fender_link" />
-      <child link="front_fender_accessory_link" />
+      <parent link="$(arg ns)front_fender_link" />
+      <child link="$(arg ns)front_fender_accessory_link" />
     </joint>
   </xacro:if>
 
-  <joint name="front_fender_joint" type="fixed">
+  <joint name="$(arg ns)front_fender_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
-    <parent link="chassis_link" />
-    <child link="front_fender_link" />
+    <parent link="$(arg ns)chassis_link" />
+    <child link="$(arg ns)front_fender_link" />
   </joint>
 
   <xacro:unless value="$(optenv JACKAL_REAR_ACCESSORY_FENDER 0)">
-    <link name="rear_fender_link">
+    <link name="$(arg ns)rear_fender_link">
       <visual>
         <geometry>
           <mesh filename="package://jackal_kinova_gazebo/meshes/jackal-fender.stl"/>
@@ -174,7 +175,7 @@
   </xacro:unless>
 
   <xacro:if value="$(optenv JACKAL_REAR_ACCESSORY_FENDER 0)">
-    <link name="rear_fender_link">
+    <link name="$(arg ns)rear_fender_link">
       <visual>
         <geometry>
           <mesh filename="package://jackal_kinova_gazebo/meshes/accessory_fender.stl"/>
@@ -183,35 +184,35 @@
       </visual>
     </link>
 
-    <link name="rear_fender_accessory_link"/>
-    <joint name="rear_fender_accessory_joint" type="fixed">
+    <link name="$(arg ns)rear_fender_accessory_link"/>
+    <joint name="$(arg ns)rear_fender_accessory_joint" type="fixed">
       <origin xyz="0.25629 0 0.07455" rpy="${PI} 0 0" />
-      <parent link="rear_fender_link" />
-      <child link="rear_fender_accessory_link" />
+      <parent link="$(arg ns)rear_fender_link" />
+      <child link="$(arg ns)rear_fender_accessory_link" />
     </joint>
   </xacro:if>
 
-  <joint name="rear_fender_joint" type="fixed">
+  <joint name="$(arg ns)rear_fender_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 ${PI}"/>
-    <parent link="chassis_link" />
-    <child link="rear_fender_link" />
+    <parent link="$(arg ns)chassis_link" />
+    <child link="$(arg ns)rear_fender_link" />
   </joint>
 
   <!-- Default Internal IMU Link -->
-  <link name="imu_link">
+  <link name="$(arg ns)imu_link">
     <inertial>
       <mass value="0.001"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia ixx="${dummy_inertia}" ixy="0.0" ixz="0.0" iyy="${dummy_inertia}" iyz="0.0" izz="${dummy_inertia}"/>
     </inertial>
   </link>
-  <joint name="imu_joint" type="fixed">
-    <parent link="base_link" />
-    <child link="imu_link" />
+  <joint name="$(arg ns)imu_joint" type="fixed">
+    <parent link="$(arg ns)base_link" />
+    <child link="$(arg ns)imu_link" />
   </joint>
 
   <!-- Default NAVSAT Link -->
-  <link name="navsat_link">
+  <link name="$(arg ns)navsat_link">
     <visual>
       <geometry>
         <cylinder radius="0.026" length="0.016" />
@@ -220,30 +221,30 @@
       <material name="black" />
     </visual>
   </link>
-  <joint name="navsat_joint" type="fixed">
-    <parent link="base_link" />
-    <child link="navsat_link" />
+  <joint name="$(arg ns)navsat_joint" type="fixed">
+    <parent link="$(arg ns)base_link" />
+    <child link="$(arg ns)navsat_link" />
     <origin xyz="-0.180 0.126 0.1815" />
   </joint>
 
-  <link name="mid_mount"></link>
-  <joint name="mid_mount_joint" type="fixed">
-    <parent link="chassis_link" />
-    <child link="mid_mount" />
+  <link name="$(arg ns)mid_mount"></link>
+  <joint name="$(arg ns)mid_mount_joint" type="fixed">
+    <parent link="$(arg ns)chassis_link" />
+    <child link="$(arg ns)mid_mount" />
     <origin xyz="0 0 ${chassis_height}" />
   </joint>
 
-  <link name="rear_mount"></link>
-  <joint name="rear_mount_joint" type="fixed">
-    <parent link="mid_mount" />
-    <child link="rear_mount" />
+  <link name="$(arg ns)rear_mount"></link>
+  <joint name="$(arg ns)rear_mount_joint" type="fixed">
+    <parent link="$(arg ns)mid_mount" />
+    <child link="$(arg ns)rear_mount" />
     <origin xyz="${-mount_spacing} 0 0" />
   </joint>
 
-  <link name="front_mount"></link>
-  <joint name="front_mount_joint" type="fixed">
-    <parent link="mid_mount" />
-    <child link="front_mount" />
+  <link name="$(arg ns)front_mount"></link>
+  <joint name="$(arg ns)front_mount_joint" type="fixed">
+    <parent link="$(arg ns)mid_mount" />
+    <child link="$(arg ns)front_mount" />
     <origin xyz="${mount_spacing} 0 0" />
   </joint>
 
@@ -252,7 +253,7 @@
   <!-- Optional standard accessories, including their simulation data. The rendering
        of these into the final description is controlled by optenv variables, which
        default each one to off.-->
-  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/accessories.urdf.xacro" />
+  <!-- <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/accessories.urdf.xacro" /> -->
 
   <!-- Optional custom includes. -->
   <xacro:include filename="$(optenv JACKAL_URDF_EXTRAS empty.urdf)" />

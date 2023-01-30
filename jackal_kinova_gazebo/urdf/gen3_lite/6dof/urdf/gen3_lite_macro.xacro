@@ -208,7 +208,7 @@
       <limit lower="0" upper="0" effort="0" velocity="0" />
     </joint>
 
-  <link name="hand_camera_bracket">
+  <link name="${prefix}hand_camera_bracket">
     <visual>
       <origin xyz="-0.175 -0.01 -1.15" rpy="${PI/2} 0 ${PI/2}"/>
       <geometry>
@@ -227,9 +227,9 @@
 
   </link>
 
-  <joint name="hand_camera_bracket_joint" type="fixed">
+  <joint name="${prefix}hand_camera_bracket_joint" type="fixed">
     <parent link="${prefix}end_effector_link"/>
-    <child link="hand_camera_bracket"/>
+    <child link="${prefix}hand_camera_bracket"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint>
 

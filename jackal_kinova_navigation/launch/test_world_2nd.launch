@@ -6,9 +6,9 @@
 
   
   <!-- Run the map server -->
- <arg name="map_file" default="$(find jackal_kinova_navigation)/maps/HRI_lab.yaml"/>
+ <arg name="map_file" default="$(find jackal_kinova_navigation)/maps/test_world_2nd.yaml"/>
  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
-
+  
   <!--- Run AMCL -->
   <include file="$(find jackal_kinova_navigation)/launch/include/amcl.launch">
     <arg name="use_map_topic" value="$(arg use_map_topic)" />
