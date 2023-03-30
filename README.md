@@ -105,6 +105,6 @@ $ roslaunch jackal_kinova_navigation HRI_lab.launch
 ```
 ## How to Set Manipulator Initial pose
 - The manipulator initial pose is set by ```kortex_driver``` using ```move_group```. 
-- To change initial pose, see [home_robot.py](https://github.com/Sungwwoo/jackal_kinova_simulator/blob/noetic-devel/jackal_kinova_moveit_config/scripts/home_robot.py).  In ```home_robot.py```, ```HOME_ACTION_IDENTIFIER``` determines the pose of the manipulator specified in [jackal_kinova.srdf](https://github.com/Sungwwoo/jackal_kinova_simulator/blob/noetic-devel/jackal_kinova_moveit_config/config/jackal_kinova.srdf).
-- There are 3 identifiers: ```1.retract```, ```2.home```, ```3.vertical```. To change initial pose, change the joint values in ```jackal_kinova.srdf``` and ```HOME_ACTION_IDENTIFIER``` in ```home_robot.py```.
+- To change initial pose, see [home_robot.py](https://github.com/Sungwwoo/jackal_kinova_simulator/blob/noetic-devel/jackal_kinova_moveit_config/scripts/home_robot.py).  In ```home_robot.py```, ```HOME_ACTION_IDENTIFIER``` determines the pose of the manipulator specified in [jackal_kinova.srdf](https://github.com/Sungwwoo/jackal_kinova_simulator/blob/noetic-devel/jackal_kinova_moveit_config/config/jackal_kinova.srdf). There are 3 identifiers: ```1.retract```, ```2.home```, ```3.vertical```. 
+- To change initial pose, change the joint values in ```jackal_kinova.srdf``` and ```HOME_ACTION_IDENTIFIER``` in ```home_robot.py```.
 - To add identifier for ```kortex_driver```, edit ```CreateDefaultActions``` in [kortex_arm_simulation.cpp](https://github.com/Kinovarobotics/ros_kortex/blob/noetic-devel/kortex_driver/src/non-generated/driver/kortex_arm_simulation.cpp#L584).
