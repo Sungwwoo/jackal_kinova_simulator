@@ -65,9 +65,9 @@ $ catkin_make
 - ```kortex_driver``` in [ros_kortex](https://github.com/Kinovarobotics/ros_kortex) is required to simulate Gen3 Lite, and [conan](https://docs.conan.io/en/latest/installation.html) is required to build [ros_kortex](https://github.com/Kinovarobotics/ros_kortex). 
 ```
 - conan
-$ python3 -m pip install conan
+$ python3 -m pip install conan==1.48.0
 # if catkin_make fails, try:
-$ sudo python3 -m pip install conan
+$ sudo python3 -m pip install conan==1.48.0
 
 $ echo "export CONAN_REVISIONS_ENABLED=1" >> ~/.bashrc
 $ source ~/.bashrc
