@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <arg name="x" default="0" />
+    <arg name="y" default="0" />
+    <arg name="z" default="0.1" />
+    <arg name="yaw" default="0" />
+    <arg name="joystick" default="true" />
+    <arg name="debug" default="false" />
+    <arg unless="$(arg debug)" name="launch_prefix" value="" />
+    <arg if="$(arg debug)" name="launch_prefix" value="gdb --ex run --args" />
+    <arg name="rviz_config" default="" />
+    <arg if="$(eval rviz_config=='')" name="command_args" value="" />
+    <arg unless="$(eval rviz_config=='')" name="command_args" value="-d $(arg rviz_config)" />
+    <arg name="first" default="JK_01" />
+    <arg name="second" default="JK_02" />
+
+    <arg name="gui" default="false" />
+    <arg name="paused" default="true" />
+    <arg name="world" default="$(find jackal_kinova_gazebo)/worlds/obst_4_6by9.world" />
+
+    <include
+        file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="paused" value="$(arg paused)" />
+        <arg name="world_name" value="$(arg world)" />
+        <arg name="use_sim_time" value="true" />
+        <arg name="gui" value="true" />
+        <arg name="headless" value="false" />
+        <arg name="debug" value="$(arg debug)" />
+        <arg name="verbose" value="false" />
+    </include>
+    <!-- <group
+        ns="$(arg second)">
+        <include file="$(find jackal_kinova_gazebo)/launch/spawn_jackal_multi.launch">
+            <arg name="x" value="0" />
+            <arg name="y" value="1" />
+            <arg name="z" value="$(arg z)" />
+            <arg name="yaw" value="$(arg yaw)" />
+            <arg name="joystick" value="$(arg joystick)" />
+            <arg name="ns" value="$(arg second)" />
+        </include>
+    </group> -->
+
+    <!-- <include file="$(find husky_ur3_gazebo)/launch/spawn_husky_ur5.launch">
+        <arg name="x" value="0"/>
+        <arg name="y" value="1"/>
+        <arg name="yaw" value="0"/>
+    </include> -->
+
+
+    <!-- <include file="$(find laser_filters)/examples/box_filter_example.launch"/> -->
+
+</launch>

@@ -4,7 +4,7 @@
     <arg name="z" default="0.1" />
     <arg name="yaw" default="0" />
     <arg name="joystick" default="true" />
-
+    <arg name="ns" default="JK_01" />
     <arg name="arm" default="gen3_lite" />
     <arg name="dof" default="6" />
     <arg name="gripper" default="gen3_lite_2f" />
@@ -17,24 +17,24 @@
     <arg name="config" default="base" />
 
     <!-- Load Jackal's description, controllers, and teleop nodes. -->
-    <include file="$(find jackal_kinova_gazebo)/launch/description.launch">
+    <include file="$(find jackal_kinova_gazebo)/launch/rl_description.launch">
+        <arg name="ns" value="$(arg ns)/" />
+        <arg name="plugin_ns" value="$(arg ns)" />
     </include>
-    <include file="$(find jackal_kinova_gazebo)/launch/control.launch">
 
-        <arg name="arm" value="gen3_lite" />
-        <arg name="dof" value="6" />
-        <arg name="gripper" value="gen3_lite_2f" />
-        <arg name="robot_name" value="" />
-        <arg name="prefix" value="" />
-        <arg name="cyclic_data_publish_rate" value="40" /> <!--Hz-->
+    <include file="$(find jackal_kinova_gazebo)/launch/rl_control.launch">
+        <arg name="ns" value="$(arg ns)" />
+        <arg name="prefix" value="$(arg ns)/" />
     </include>
-    <include file="$(find jackal_kinova_gazebo)/launch/teleop.launch">
+
+    <include file="$(find jackal_kinova_gazebo)/launch/mteleop.launch">
         <arg name="joystick" value="$(arg joystick)" />
+        <arg name="ns" value="$(arg ns)" />
     </include>
 
     <!-- Spawn Jackal_kinova -->
     <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
-        args="-unpause -urdf -model jackal_kinova -param robot_description -x $(arg x) -y $(arg y) -z $(arg z) -R 0 -P 0 -Y $(arg yaw)" />
+        args="-urdf -model $(arg ns)_jackal_kinova -param robot_description -x $(arg x) -y $(arg y) -z $(arg z) -R 0 -P 0 -Y $(arg yaw)" />
 
 
 </launch>
