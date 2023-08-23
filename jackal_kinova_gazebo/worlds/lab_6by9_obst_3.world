@@ -71,7 +71,7 @@
     <physics type='ode'>
       <max_step_size>0.001</max_step_size>
       <real_time_factor>1</real_time_factor>
-      <real_time_update_rate>0</real_time_update_rate>
+      <real_time_update_rate>8000</real_time_update_rate>
     </physics>
     <scene>
       <ambient>0.4 0.4 0.4 1</ambient>
@@ -288,7 +288,7 @@
       <collision name='collision'>
         <geometry>
           <cylinder>
-            <radius>0.3</radius>
+            <radius>0.5</radius>
             <length>1</length>
           </cylinder>
         </geometry>
@@ -309,7 +309,7 @@
       <visual name='visual'>
         <geometry>
           <cylinder>
-            <radius>0.3</radius>
+            <radius>0.5</radius>
             <length>1</length>
           </cylinder>
         </geometry>
@@ -343,7 +343,7 @@
       <collision name='collision'>
         <geometry>
           <cylinder>
-            <radius>0.3</radius>
+            <radius>0.5</radius>
             <length>1</length>
           </cylinder>
         </geometry>
@@ -364,7 +364,7 @@
       <visual name='visual'>
         <geometry>
           <cylinder>
-            <radius>0.3</radius>
+            <radius>0.5</radius>
             <length>1</length>
           </cylinder>
         </geometry>
@@ -398,7 +398,7 @@
       <collision name='collision'>
         <geometry>
           <cylinder>
-            <radius>0.3</radius>
+            <radius>0.5</radius>
             <length>1</length>
           </cylinder>
         </geometry>
@@ -419,7 +419,7 @@
       <visual name='visual'>
         <geometry>
           <cylinder>
-            <radius>0.3</radius>
+            <radius>0.5</radius>
             <length>1</length>
           </cylinder>
         </geometry>
