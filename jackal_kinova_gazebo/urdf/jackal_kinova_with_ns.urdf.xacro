@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 
-<robot xmlns:xacro="http://ros.org/wiki/xacro" name="jackal_kinova" >
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="jackal_kinova">
 
-  <xacro:property name="PI" value="3.1415926535897931"/>
-  <xacro:arg name="ns" default="JK_01/"/>
-  <xacro:arg name="plugin_ns" default="JK_01/"/>
+  <xacro:property name="PI" value="3.1415926535897931" />
+  <xacro:arg name="ns" default="JK_01/" />
+  <xacro:arg name="plugin_ns" default="JK_01/" />
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
       <robotNamespace>/$(arg plugin_ns)</robotNamespace>
@@ -12,62 +12,63 @@
   </gazebo>
 
   <!-- include jackal, tim571, d435 urdf -->
-  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/jackal_with_ns.urdf.xacro"/>
-  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/include/m_tim571.urdf.xacro"/>
-  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/include/m_d435.urdf.xacro"/>
+  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/jackal_with_ns.urdf.xacro" />
+  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/include/m_tim571.urdf.xacro" />
+  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/include/m_d435.urdf.xacro" />
 
   <!-- include arm urdf -->
   <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/gen3_lite_gen3_lite_2f.xacro">
-    <xacro:arg name="sim" value="true"/>
-    <xacro:arg name="prefix" value="$(arg ns)"/>
+    <xacro:arg name="sim" value="true" />
+    <xacro:arg name="prefix" value="$(arg ns)" />
   </xacro:include>
   <!-- Bring in simulation data for Gazebo. -->
   <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/jackal_with_ns.gazebo">
-    <xacro:arg name="ns" value="$(arg ns)"/>
+    <xacro:arg name="ns" value="$(arg ns)" />
   </xacro:include>
 
   <!-- lidar, base_camera mount -->
   <link name="$(arg ns)top_structure">
     <visual>
-      <origin xyz="0 0 0" rpy="${PI/2} 0 -${PI/2}"/>
+      <origin xyz="0 0 0" rpy="${PI/2} 0 -${PI/2}" />
       <geometry>
-        <mesh filename="package://jackal_kinova_gazebo/meshes/top_structure_roas.STL"/>
+        <mesh filename="package://jackal_kinova_gazebo/meshes/top_structure_roas.STL" />
       </geometry>
       <material name="silver">
-        <color rgba="0.75 0.75 0.75 1"/>
+        <color rgba="0.75 0.75 0.75 1" />
       </material>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin xyz="0 0 0" rpy="${PI/2} 0 -${PI/2}"/>
       <geometry>
         <mesh filename="package://jackal_kinova_gazebo/meshes/top_structure_roas.STL"/>
       </geometry>
-    </collision>
+    </collision> -->
   </link>
-          
+
   <joint name="$(arg ns)top_structure_joint" type="fixed">
-    <parent link="$(arg ns)base_link"/>
-    <child link="$(arg ns)top_structure"/>
-    <origin xyz="0 0 -0.065" rpy="0 0 0"/>
+    <parent link="$(arg ns)base_link" />
+    <child link="$(arg ns)top_structure" />
+    <origin xyz="0 0 -0.065" rpy="0 0 0" />
   </joint>
 
   <joint name="$(arg ns)gen3_lite_joint" type="fixed">
-    <parent link="$(arg ns)base_link"/>
-    <child link="$(arg ns)gen3_lite_base_link"/>
-    <origin xyz="0.01 0 0.214" rpy="0 0 0"/>
+    <parent link="$(arg ns)base_link" />
+    <child link="$(arg ns)gen3_lite_base_link" />
+    <origin xyz="0.01 0 0.214" rpy="0 0 0" />
   </joint>
 
-  <xacro:sensor_d435 parent="$(arg ns)base_link"  name="$(arg ns)base_camera" camera="base_camera">
-    <origin xyz="0.196 0 0.256" rpy="0 0 0"/>
+  <xacro:sensor_d435 parent="$(arg ns)base_link" name="$(arg ns)base_camera" camera="base_camera">
+    <origin xyz="0.196 0 0.256" rpy="0 0 0" />
   </xacro:sensor_d435>
 
   <!-- hand_camera_bracket link is located in gen3_lite_macro.xacro -->
-  <xacro:sensor_d435 parent="$(arg ns)hand_camera_bracket" name="$(arg ns)hand_camera" camera="hand_camera">
-    <origin xyz="0.04 0 0.02" rpy="${PI/2} -${PI/2} ${PI/2}"/>
+  <xacro:sensor_d435 parent="$(arg ns)hand_camera_bracket" name="$(arg ns)hand_camera"
+    camera="hand_camera">
+    <origin xyz="0.04 0 0.02" rpy="${PI/2} -${PI/2} ${PI/2}" />
   </xacro:sensor_d435>
 
   <xacro:sensor_tim571 name="$(arg ns)laser" parent="$(arg ns)base_link" topic="scan" ns="$(arg ns)">
-    <origin xyz="0.145 0 0.284" rpy="0 0 0"/>
+    <origin xyz="0.145 0 0.284" rpy="0 0 0" />
   </xacro:sensor_tim571>
 
 </robot>
