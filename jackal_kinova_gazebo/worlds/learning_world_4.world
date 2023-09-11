@@ -73,7 +73,7 @@
     <physics type='ode'>
       <max_step_size>0.001</max_step_size>
       <real_time_factor>1</real_time_factor>
-      <real_time_update_rate>1000</real_time_update_rate>
+      <real_time_update_rate>0</real_time_update_rate>
     </physics>
     <scene>
       <ambient>0.4 0.4 0.4 1</ambient>
@@ -1103,7 +1103,7 @@
       </model>
       <model name='unit_box_clone_0_clone_4'>
         <pose>10.523 -1.94507 0.5 0 -0 1.58429</pose>
-        <scale>1 2.82554 1</scale>
+        <scale>1 2.32554 1</scale>
         <link name='link'>
           <pose>10.523 -1.94507 0.5 0 -0 1.58429</pose>
           <velocity>0 0 0 0 -0 0</velocity>
@@ -1113,7 +1113,7 @@
       </model>
       <model name='unit_box_clone_0_clone_5'>
         <pose>10.538 -3.98246 0.5 0 -0 1.5967</pose>
-        <scale>1 2.87061 1</scale>
+        <scale>1 2.37061 1</scale>
         <link name='link'>
           <pose>10.5938 -3.98246 0.5 0 -0 1.5967</pose>
           <velocity>0 0 0 0 -0 0</velocity>
