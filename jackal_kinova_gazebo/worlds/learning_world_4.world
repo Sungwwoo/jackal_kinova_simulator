@@ -73,7 +73,7 @@
     <physics type='ode'>
       <max_step_size>0.001</max_step_size>
       <real_time_factor>1</real_time_factor>
-      <real_time_update_rate>0</real_time_update_rate>
+      <real_time_update_rate>1000</real_time_update_rate>
     </physics>
     <scene>
       <ambient>0.4 0.4 0.4 1</ambient>
@@ -4906,7 +4906,7 @@
 
     <!-- Dynamic world 1 -->
     <actor name="d1_0">
-      <pose>13 -7.0 0.55 0 0 0 </pose>
+      <pose>13 -6.8 0.4 0 0 0</pose>
       <allow_auto_disable>false</allow_auto_disable>
       <skin>
         <geometry>
@@ -4965,7 +4965,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <static>1</static>
       <plugin name="d1_0_collision_plugin"
         filename="/home/sungwoo/actor_collisions/build/libActorCollisionsPlugin.so">
       </plugin>
@@ -4989,7 +4988,7 @@
       </script>
     </actor>
     <actor name="d1_1">
-      <pose>12 -7.0 0.4 0 0 0 </pose>
+      <pose>11.5 -10.8 0.4 0 0 0</pose>
       <allow_auto_disable>false</allow_auto_disable>
       <skin>
         <geometry>
@@ -5048,7 +5047,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <static>1</static>
       <plugin name="d1_1_collision_plugin"
         filename="/home/sungwoo/actor_collisions/build/libActorCollisionsPlugin.so">
       </plugin>
@@ -5073,7 +5071,7 @@
     </actor>
 
     <actor name="d1_2">
-      <pose>12 -7.0 0.4 0 0 0 </pose>
+      <pose>10 -6.8 0.4 0 0 0</pose>
       <allow_auto_disable>false</allow_auto_disable>
       <skin>
         <geometry>
@@ -5132,7 +5130,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <static>1</static>
       <plugin name="d1_2_collision_plugin"
         filename="/home/sungwoo/actor_collisions/build/libActorCollisionsPlugin.so">
       </plugin>
@@ -5159,7 +5156,7 @@
     <!-- Dynamic world 2 -->
 
     <actor name="d2_0">
-      <pose>13 -7.0 0.55 0 0 0 </pose>
+      <pose>13 -13 0.4 0 0 0</pose>
       <allow_auto_disable>false</allow_auto_disable>
       <skin>
         <geometry>
@@ -5218,7 +5215,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <static>1</static>
       <plugin name="d2_0_collision_plugin"
         filename="/home/sungwoo/actor_collisions/build/libActorCollisionsPlugin.so">
       </plugin>
@@ -5242,7 +5238,7 @@
       </script>
     </actor>
     <actor name="d2_1">
-      <pose>12 -7.0 0.4 0 0 0 </pose>
+      <pose>10 -15 0.4 0 0 0</pose>
       <allow_auto_disable>false</allow_auto_disable>
       <skin>
         <geometry>
@@ -5301,7 +5297,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <static>1</static>
       <plugin name="d2_1_collision_plugin"
         filename="/home/sungwoo/actor_collisions/build/libActorCollisionsPlugin.so">
       </plugin>
@@ -5326,7 +5321,7 @@
     </actor>
 
     <actor name="d2_2">
-      <pose>12 -7.0 0.4 0 0 0 </pose>
+      <pose>13 -17 0.4 0 0 0</pose>
       <allow_auto_disable>false</allow_auto_disable>
       <skin>
         <geometry>
@@ -5385,7 +5380,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <static>1</static>
       <plugin name="d2_2_collision_plugin"
         filename="/home/sungwoo/actor_collisions/build/libActorCollisionsPlugin.so">
       </plugin>
@@ -5411,7 +5405,7 @@
 
     <!-- Dynamic world 3-->
     <actor name="d3_0">
-      <pose>13 -7.0 0.55 0 0 0 </pose>
+      <pose>5 -8.25 0.4 0 0 0</pose>
       <allow_auto_disable>false</allow_auto_disable>
       <skin>
         <geometry>
@@ -5470,7 +5464,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <static>1</static>
       <plugin name="d3_0_collision_plugin"
         filename="/home/sungwoo/actor_collisions/build/libActorCollisionsPlugin.so">
       </plugin>
@@ -5494,7 +5487,7 @@
       </script>
     </actor>
     <actor name="d3_1">
-      <pose>12 -7.0 0.4 0 0 0 </pose>
+      <pose>-0.5 -12.5 0.4 0 0 0</pose>
       <allow_auto_disable>false</allow_auto_disable>
       <skin>
         <geometry>
@@ -5553,7 +5546,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <static>1</static>
       <plugin name="d3_1_collision_plugin"
         filename="/home/sungwoo/actor_collisions/build/libActorCollisionsPlugin.so">
       </plugin>
@@ -5579,7 +5571,7 @@
 
     <!-- Dynamic world 4-->
     <actor name="d4_0">
-      <pose>13 -7.0 0.55 0 0 0 </pose>
+      <pose>0 -2.5 0.4 0 0 0</pose>
       <allow_auto_disable>false</allow_auto_disable>
       <skin>
         <geometry>
@@ -5638,7 +5630,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <static>1</static>
       <plugin name="d4_0_collision_plugin"
         filename="/home/sungwoo/actor_collisions/build/libActorCollisionsPlugin.so">
       </plugin>
@@ -5670,7 +5661,7 @@
       </script>
     </actor>
     <actor name="d4_1">
-      <pose>12 -7.0 0.4 0 0 0 </pose>
+      <pose>-2.25 -11.5 0.4 0 0 0</pose>
       <allow_auto_disable>false</allow_auto_disable>
       <skin>
         <geometry>
@@ -5729,7 +5720,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <static>1</static>
       <plugin name="d4_1_collision_plugin"
         filename="/home/sungwoo/actor_collisions/build/libActorCollisionsPlugin.so">
       </plugin>
@@ -5754,7 +5744,7 @@
     </actor>
 
     <actor name="d4_2">
-      <pose>12 -7.0 0.4 0 0 0 </pose>
+      <pose>-4.25 -15 0.4 0 0 0</pose>
       <allow_auto_disable>false</allow_auto_disable>
       <skin>
         <geometry>
@@ -5813,7 +5803,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <static>1</static>
       <plugin name="d4_2_collision_plugin"
         filename="/home/sungwoo/actor_collisions/build/libActorCollisionsPlugin.so">
       </plugin>
@@ -5839,7 +5828,7 @@
     <!-- Dynamic world 5-->
 
     <actor name="d5_0">
-      <pose>12 -7.0 0.4 0 0 0 </pose>
+      <pose>-6.5 -17 0.4 0 0 0</pose>
       <allow_auto_disable>false</allow_auto_disable>
       <skin>
         <geometry>
@@ -5898,7 +5887,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <static>1</static>
       <plugin name="d5_0_collision_plugin"
         filename="/home/sungwoo/actor_collisions/build/libActorCollisionsPlugin.so">
       </plugin>
@@ -5923,7 +5911,7 @@
     </actor>
 
     <actor name="d5_1">
-      <pose>12 -7.0 0.4 0 0 0 </pose>
+      <pose>-12 -1 0.4 0 0 0</pose>
       <allow_auto_disable>false</allow_auto_disable>
       <skin>
         <geometry>
@@ -5982,7 +5970,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <static>1</static>
       <plugin name="d5_1_collision_plugin"
         filename="/home/sungwoo/actor_collisions/build/libActorCollisionsPlugin.so">
       </plugin>
@@ -6015,7 +6002,7 @@
     </actor>
 
     <actor name="d5_2">
-      <pose>12 -7.0 0.4 0 0 0 </pose>
+      <pose>-14 -11.75 0.4 0 0 0</pose>
       <allow_auto_disable>false</allow_auto_disable>
       <skin>
         <geometry>
@@ -6074,7 +6061,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <static>1</static>
       <plugin name="d5_2_collision_plugin"
         filename="/home/sungwoo/actor_collisions/build/libActorCollisionsPlugin.so">
       </plugin>
@@ -6107,7 +6093,7 @@
     </actor>
 
     <actor name="d5_3">
-      <pose>12 -7.0 0.4 0 0 0 </pose>
+      <pose>-8 -12 0.4 0 0 0</pose>
       <allow_auto_disable>false</allow_auto_disable>
       <skin>
         <geometry>
@@ -6166,7 +6152,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <static>1</static>
       <plugin name="d5_3_collision_plugin"
         filename="/home/sungwoo/actor_collisions/build/libActorCollisionsPlugin.so">
       </plugin>
@@ -6199,7 +6184,7 @@
     </actor>
 
     <actor name="d5_4">
-      <pose>12 -7.0 0.4 0 0 0 </pose>
+      <pose>-8 -9 0.4 0 0 0</pose>
       <allow_auto_disable>false</allow_auto_disable>
       <skin>
         <geometry>
@@ -6258,7 +6243,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <static>1</static>
       <plugin name="d5_4_collision_plugin"
         filename="/home/sungwoo/actor_collisions/build/libActorCollisionsPlugin.so">
       </plugin>
@@ -6291,7 +6275,7 @@
     </actor>
 
     <actor name="d5_5">
-      <pose>12 -7.0 0.4 0 0 0 </pose>
+      <pose>-12 -9.25 0.4 0 0 0</pose>
       <allow_auto_disable>false</allow_auto_disable>
       <skin>
         <geometry>
@@ -6350,7 +6334,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <static>1</static>
       <plugin name="d5_5_collision_plugin"
         filename="/home/sungwoo/actor_collisions/build/libActorCollisionsPlugin.so">
       </plugin>
@@ -6384,7 +6367,7 @@
 
 
     <actor name="d5_6">
-      <pose>12 -7.0 0.4 0 0 0 </pose>
+      <pose>-14 -4.75 0.4 0 0 0</pose>
       <allow_auto_disable>false</allow_auto_disable>
       <skin>
         <geometry>
@@ -6443,7 +6426,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <static>1</static>
       <plugin name="d5_6_collision_plugin"
         filename="/home/sungwoo/actor_collisions/build/libActorCollisionsPlugin.so">
       </plugin>
@@ -6477,7 +6459,7 @@
 
 
     <actor name="d5_7">
-      <pose>12 -7.0 0.4 0 0 0 </pose>
+      <pose>-6 -5 0.4 0 0 0</pose>
       <allow_auto_disable>false</allow_auto_disable>
       <skin>
         <geometry>
@@ -6536,7 +6518,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <static>1</static>
       <plugin name="d5_7_collision_plugin"
         filename="/home/sungwoo/actor_collisions/build/libActorCollisionsPlugin.so">
       </plugin>
