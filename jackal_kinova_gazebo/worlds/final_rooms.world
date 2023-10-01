@@ -66,6 +66,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
     <gravity>0 0 -9.8</gravity>
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
@@ -1456,6 +1457,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
     <model name='unit_box_0'>
       <pose>10.9294 24.7304 0.5 0 -0 0</pose>
@@ -1509,6 +1511,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
     <model name='unit_wall_0'>
       <pose>10.8513 22.382 0.5 0 -0 0</pose>
@@ -1562,6 +1565,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
     <model name='unit_cylinder_0_clone_0'>
       <pose>5.45188 10.09 0.5 0 -0 0</pose>
@@ -1617,6 +1621,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
     <model name='unit_cylinder_0_clone_1'>
       <pose>6.49137 8.73605 0.5 0 -0 0</pose>
@@ -1672,6 +1677,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
     <model name='unit_cylinder_0_clone_3'>
       <pose>4.25907 11.5397 0.5 0 -0 0</pose>
@@ -1727,6 +1733,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
     <model name='unit_cylinder_0_clone_4'>
       <pose>5.0505 4.06293 0.5 0 -0 0</pose>
@@ -1782,6 +1789,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
     <model name='unit_wall_0_clone'>
       <pose>6.7405 11.5949 0.5 0 -0 0</pose>
@@ -1835,6 +1843,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
     <model name='unit_wall_0_clone_0'>
       <pose>5.06458 -4.14823 0.5 0 -0 0</pose>
@@ -1888,6 +1897,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
     <model name='unit_wall_0_clone_1'>
       <pose>5.06165 -2.75644 0.5 0 -0 0</pose>
@@ -1941,6 +1951,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
     <model name='unit_wall_0_clone_2'>
       <pose>5.07919 -5.48888 0.5 0 -0 0</pose>
@@ -1994,6 +2005,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
     <model name='unit_box_0_clone'>
       <pose>3.81931 8.4716 0.5 0 -0 0</pose>
@@ -2047,6 +2059,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
     <model name='unit_wall_0_clone_3'>
       <pose>-7.56731 1.91207 0.5 0 -0 0</pose>
@@ -2100,6 +2113,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
     <model name='unit_box_0_clone_0'>
       <pose>-4.24836 3.89372 0.5 0 -0 0</pose>
@@ -2153,6 +2167,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
     <model name='unit_wall_0_clone_4'>
       <pose>-3.87813 11.7462 0.5 0 -0 0</pose>
@@ -2206,6 +2221,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
     <model name='unit_wall_0_clone_5'>
       <pose>-6.96716 8.49331 0.5 0 -0 0</pose>
@@ -2259,6 +2275,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
     <model name='unit_wall_0_clone_6'>
       <pose>-5.51534 10.12 0.5 0 -0 0</pose>
@@ -2312,6 +2329,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
     <model name='unit_wall_0_clone_7'>
       <pose>-3.79732 8.44584 0.5 0 -0 0</pose>
@@ -2365,6 +2383,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
     <model name='unit_cylinder_0_clone'>
       <pose>-5.7361 -1.90782 0.5 0 -0 0</pose>
@@ -2420,6 +2439,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
     <model name='unit_cylinder_0_clone_2'>
       <pose>-5.72267 -4.08612 0.5 0 -0 0</pose>
@@ -2475,6 +2495,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
     <model name='unit_cylinder_0_clone_5'>
       <pose>-5.75661 -6.21466 0.5 0 -0 0</pose>
@@ -2530,6 +2551,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+      <static>1</static>
     </model>
 
     <!-- Dynamic world 1 -->
@@ -2605,11 +2627,11 @@
             <pose>5 -8 0.4 0 0 0</pose>
           </waypoint>
           <waypoint>
-            <time>8.0</time>
+            <time>10.0</time>
             <pose>5 -12 0.4 0 0 0</pose>
           </waypoint>
           <waypoint>
-            <time>16.0</time>
+            <time>20.0</time>
             <pose>5 -8 0.4 0 0 0</pose>
           </waypoint>
         </trajectory>
@@ -2770,11 +2792,11 @@
             <pose>8 -8 0.4 0 0 0</pose>
           </waypoint>
           <waypoint>
-            <time>9.0</time>
+            <time>10.0</time>
             <pose>8 -12 0.4 0 0 0</pose>
           </waypoint>
           <waypoint>
-            <time>18.0</time>
+            <time>20.0</time>
             <pose>8 -8 0.4 0 0 0</pose>
           </waypoint>
         </trajectory>
@@ -2854,11 +2876,11 @@
             <pose>-4 -2 0.4 0 0 0</pose>
           </waypoint>
           <waypoint>
-            <time>8.0</time>
+            <time>10.0</time>
             <pose>-4 -6 0.4 0 0 0</pose>
           </waypoint>
           <waypoint>
-            <time>16.0</time>
+            <time>20.0</time>
             <pose>-4 -2 0.4 0 0 0</pose>
           </waypoint>
         </trajectory>
@@ -2937,11 +2959,11 @@
             <pose>-3 -8.25 0.4 0 0 0</pose>
           </waypoint>
           <waypoint>
-            <time>8.0</time>
+            <time>10.0</time>
             <pose>-8 -8.25 0.4 0 0 0</pose>
           </waypoint>
           <waypoint>
-            <time>16.0</time>
+            <time>20.0</time>
             <pose>-3 -8.25 0.4 0 0 0</pose>
           </waypoint>
         </trajectory>
@@ -3020,11 +3042,11 @@
             <pose>-7.5 -10.4 0 0 0</pose>
           </waypoint>
           <waypoint>
-            <time>8.0</time>
+            <time>10.0</time>
             <pose>-3 -10 0.4 0 0 0</pose>
           </waypoint>
           <waypoint>
-            <time>16.0</time>
+            <time>20.0</time>
             <pose>-7.5 -10 0.4 0 0 0</pose>
           </waypoint>
         </trajectory>
@@ -3103,11 +3125,11 @@
             <pose>-3 -11.75 0.4 0 0 0</pose>
           </waypoint>
           <waypoint>
-            <time>8.0</time>
+            <time>10.0</time>
             <pose>-8 -11.75 0.4 0 0 0</pose>
           </waypoint>
           <waypoint>
-            <time>16.0</time>
+            <time>20.0</time>
             <pose>-3 -11.75 0.4 0 0 0</pose>
           </waypoint>
         </trajectory>
