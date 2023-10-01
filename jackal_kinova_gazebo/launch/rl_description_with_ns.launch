@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="ns" default="" />
+  <arg name="plugin_ns" default="" />
+  <param name="robot_description"
+    command="$(find xacro)xacro '$(find jackal_kinova_gazebo)/urdf/jackal_base_with_ns.urdf.xacro' ns:=$(arg ns) prefix:=$(arg ns) plugin_ns:=$(arg plugin_ns)" />
+
+</launch>

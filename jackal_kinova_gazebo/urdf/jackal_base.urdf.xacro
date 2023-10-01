@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="jackal_kinova">
+
+  <xacro:property name="PI" value="3.1415926535897931" />
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    </plugin>
+  </gazebo>
+
+  <!-- include jackal, tim571, d435 urdf -->
+  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/jackal.urdf.xacro" />
+  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/include/m_tim571.urdf.xacro" />
+  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/include/m_d435.urdf.xacro" />
+
+  <!-- Bring in simulation data for Gazebo. -->
+  <xacro:include filename="$(find jackal_kinova_gazebo)/urdf/jackal.gazebo">
+  </xacro:include>
+
+  <!-- lidar, base_camera mount -->
+  <link name="top_structure">
+    <visual>
+      <origin xyz="0 0 0" rpy="${PI/2} 0 -${PI/2}" />
+      <geometry>
+        <mesh filename="package://jackal_kinova_gazebo/meshes/top_structure_roas.STL" />
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint name="top_structure_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="top_structure" />
+    <origin xyz="0 0 -0.065" rpy="0 0 0" />
+  </joint>
+
+
+  <xacro:sensor_d435 parent="base_link" name="base_camera" camera="base_camera">
+    <origin xyz="0.196 0 0.256" rpy="0 0 0" />
+  </xacro:sensor_d435>
+
+
+  <xacro:sensor_tim571 name="laser" parent="base_link" topic="scan" ns="">
+    <origin xyz="0.145 0 0.284" rpy="0 0 0" />
+  </xacro:sensor_tim571>
+
+</robot>

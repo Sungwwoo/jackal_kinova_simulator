@@ -1,12 +1,6 @@
 <?xml version="1.0"?>
 <robot>
   <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/</robotNamespace>
-    </plugin>
-  </gazebo>
-
-  <gazebo>
     <plugin name="imu_controller" filename="libhector_gazebo_ros_imu.so">
       <robotNamespace>/</robotNamespace>
       <updateRate>50.0</updateRate>
@@ -18,6 +12,20 @@
       <rateGaussianNoise>0.005 0.005 0.005 </rateGaussianNoise>
       <headingDrift>0.005</headingDrift>
       <headingGaussianNoise>0.005</headingGaussianNoise>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+      <robotNamespace></robotNamespace>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>50.0</updateRate>
+      <bodyName>base_link</bodyName>
+      <topicName>base_pose_ground_truth</topicName>
+      <gaussianNoise>0.01</gaussianNoise>
+      <frameName>map</frameName>
+      <xyzOffsets>0 0 0</xyzOffsets>
+      <rpyOffsets>0 0 0</rpyOffsets>
     </plugin>
   </gazebo>
 
@@ -45,7 +53,7 @@
     <material>Gazebo/DarkGrey</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
-    <gazebo reference="imu_link">
+  <gazebo reference="imu_link">
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
 
@@ -60,5 +68,37 @@
   <gazebo reference="rear_fender_link">
     <material>Gazebo/Yellow</material>
     <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+
+  <gazebo reference="rear_fender_link">
+    <!-- Virtual Contact Sensor -->
+    <sensor name='rear_fender_contact_sensor' type='contact'>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>10.0</updateRate>
+      <contact>
+        <collision>base_link_fixed_joint_lump__rear_fender_collision_collision_2</collision>
+      </contact>
+      <plugin name="contact_plugin_1" filename="libgazebo_ros_bumper.so">
+
+        <bumperTopicName>base_collision_1</bumperTopicName>
+        <frameName>rear_fender_link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="front_fender_link">
+    <!-- Virtual Contact Sensor -->
+    <sensor name='front_fender_contact_sensor' type='contact'>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>10.0</updateRate>
+      <contact>
+        <collision>base_link_fixed_joint_lump__front_fender_collision_collision_1</collision>
+      </contact>
+      <plugin name="contact_plugin_2" filename="libgazebo_ros_bumper.so">
+        <bumperTopicName>base_collision_2</bumperTopicName>
+        <frameName>front_fender_link</frameName>
+      </plugin>
+    </sensor>
   </gazebo>
 </robot>

@@ -6,20 +6,24 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /twist_controller1
         - /odom1/Frames1
         - /base_link1/Frames1
         - /base_link1/Tree1
         - /ee_link1/Frames1
+        - /base_camera1
         - /base_pointcloud1/Auto Size1
         - /hand_pointcloud1/Auto Size1
-        - /Path1
-        - /MarkerArray1
+        - /Marker1
+        - /MarkerArray2
+        - /Marker2
       Splitter Ratio: 0.47283703088760376
-    Tree Height: 625
+    Tree Height: 1792
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
     Expanded:
+      - /Interact1
       - /2D Pose Estimate1
       - /2D Nav Goal1
       - /Publish Point1
@@ -68,246 +72,125 @@ Visualization Manager:
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
-        JK_01/arm_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/base_camera_bottom_screw_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/base_camera_color_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/base_camera_color_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/base_camera_depth_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/base_camera_depth_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/base_camera_gazebo:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/base_camera_infra1_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/base_camera_infra1_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/base_camera_infra2_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/base_camera_infra2_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/base_camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/base_footprint:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/chassis_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/dummy_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/end_effector_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/forearm_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/front_fender_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/front_left_wheel_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/front_mount:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/front_right_wheel_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/gen3_lite_base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/gripper_base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/hand_camera_bottom_screw_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/hand_camera_bracket:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/hand_camera_color_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/hand_camera_color_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/hand_camera_depth_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/hand_camera_depth_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/hand_camera_gazebo:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/hand_camera_infra1_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/hand_camera_infra1_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/hand_camera_infra2_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/hand_camera_infra2_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/hand_camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/imu_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/laser_base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/laser_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/left_finger_dist_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/left_finger_prox_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/lower_wrist_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/mid_mount:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/navsat_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/rear_fender_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/rear_left_wheel_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/rear_mount:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/rear_right_wheel_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/right_finger_dist_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/right_finger_prox_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/shoulder_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/tool_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        JK_01/top_structure:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        JK_01/upper_wrist_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         Link Tree Style: Links in Alphabetic Order
+        base_camera_bottom_screw_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        base_camera_color_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        base_camera_color_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        base_camera_depth_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        base_camera_depth_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        base_camera_gazebo:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        base_camera_infra1_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        base_camera_infra1_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        base_camera_infra2_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        base_camera_infra2_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        base_camera_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        chassis_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_fender_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_left_wheel_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_mount:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        front_right_wheel_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        laser_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        laser_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mid_mount:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        navsat_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rear_fender_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rear_left_wheel_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rear_mount:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        rear_right_wheel_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        top_structure:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -400,12 +283,12 @@ Visualization Manager:
       Class: rviz/Map
       Color Scheme: map
       Draw Behind: true
-      Enabled: false
+      Enabled: true
       Name: Map
       Topic: /map
       Unreliable: false
       Use Timestamp: false
-      Value: false
+      Value: true
     - Alpha: 0.699999988079071
       Class: rviz/Map
       Color Scheme: costmap
@@ -476,13 +359,13 @@ Visualization Manager:
       Value: true
     - Class: rviz/InteractiveMarkers
       Enable Transparency: true
-      Enabled: false
+      Enabled: true
       Name: twist_controller
       Show Axes: false
       Show Descriptions: true
       Show Visual Aids: false
-      Update Topic: /JK_01/twist_marker_server/update
-      Value: false
+      Update Topic: /twist_marker_server/update
+      Value: true
     - Class: rviz/TF
       Enabled: true
       Filter (blacklist): ""
@@ -490,117 +373,63 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        JK_01/arm_link:
-          Value: false
-        JK_01/base_camera_bottom_screw_frame:
-          Value: false
-        JK_01/base_camera_color_frame:
-          Value: false
-        JK_01/base_camera_color_optical_frame:
-          Value: false
-        JK_01/base_camera_depth_frame:
-          Value: false
-        JK_01/base_camera_depth_optical_frame:
-          Value: false
-        JK_01/base_camera_gazebo:
-          Value: false
-        JK_01/base_camera_infra1_frame:
-          Value: false
-        JK_01/base_camera_infra1_optical_frame:
-          Value: false
-        JK_01/base_camera_infra2_frame:
-          Value: false
-        JK_01/base_camera_infra2_optical_frame:
-          Value: false
-        JK_01/base_camera_link:
-          Value: false
-        JK_01/base_footprint:
+        base_camera_bottom_screw_frame:
           Value: true
-        JK_01/base_link:
+        base_camera_color_frame:
           Value: true
-        JK_01/chassis_link:
-          Value: false
-        JK_01/dummy_link:
-          Value: false
-        JK_01/end_effector_link:
-          Value: false
-        JK_01/forearm_link:
-          Value: false
-        JK_01/front_fender_link:
-          Value: false
-        JK_01/front_left_wheel_link:
-          Value: false
-        JK_01/front_mount:
-          Value: false
-        JK_01/front_right_wheel_link:
-          Value: false
-        JK_01/gen3_lite_base_link:
-          Value: false
-        JK_01/gripper_base_link:
-          Value: false
-        JK_01/hand_camera_bottom_screw_frame:
-          Value: false
-        JK_01/hand_camera_bracket:
-          Value: false
-        JK_01/hand_camera_color_frame:
-          Value: false
-        JK_01/hand_camera_color_optical_frame:
-          Value: false
-        JK_01/hand_camera_depth_frame:
-          Value: false
-        JK_01/hand_camera_depth_optical_frame:
-          Value: false
-        JK_01/hand_camera_gazebo:
-          Value: false
-        JK_01/hand_camera_infra1_frame:
-          Value: false
-        JK_01/hand_camera_infra1_optical_frame:
-          Value: false
-        JK_01/hand_camera_infra2_frame:
-          Value: false
-        JK_01/hand_camera_infra2_optical_frame:
-          Value: false
-        JK_01/hand_camera_link:
-          Value: false
-        JK_01/imu_link:
-          Value: false
-        JK_01/laser_base_link:
-          Value: false
-        JK_01/laser_link:
-          Value: false
-        JK_01/left_finger_dist_link:
-          Value: false
-        JK_01/left_finger_prox_link:
-          Value: false
-        JK_01/lower_wrist_link:
-          Value: false
-        JK_01/mid_mount:
-          Value: false
-        JK_01/navsat_link:
-          Value: false
-        JK_01/odom:
+        base_camera_color_optical_frame:
           Value: true
-        JK_01/rear_fender_link:
-          Value: false
-        JK_01/rear_left_wheel_link:
-          Value: false
-        JK_01/rear_mount:
-          Value: false
-        JK_01/rear_right_wheel_link:
-          Value: false
-        JK_01/right_finger_dist_link:
-          Value: false
-        JK_01/right_finger_prox_link:
-          Value: false
-        JK_01/shoulder_link:
-          Value: false
-        JK_01/tool_frame:
-          Value: false
-        JK_01/top_structure:
-          Value: false
-        JK_01/upper_wrist_link:
-          Value: false
+        base_camera_depth_frame:
+          Value: true
+        base_camera_depth_optical_frame:
+          Value: true
+        base_camera_gazebo:
+          Value: true
+        base_camera_infra1_frame:
+          Value: true
+        base_camera_infra1_optical_frame:
+          Value: true
+        base_camera_infra2_frame:
+          Value: true
+        base_camera_infra2_optical_frame:
+          Value: true
+        base_camera_link:
+          Value: true
+        base_link:
+          Value: true
+        chassis_link:
+          Value: true
+        front_fender_link:
+          Value: true
+        front_left_wheel_link:
+          Value: true
+        front_mount:
+          Value: true
+        front_right_wheel_link:
+          Value: true
+        imu_link:
+          Value: true
+        laser_base_link:
+          Value: true
+        laser_link:
+          Value: true
         map:
+          Value: true
+        mid_mount:
+          Value: true
+        navsat_link:
+          Value: true
+        odom:
+          Value: true
+        rear_fender_link:
+          Value: true
+        rear_left_wheel_link:
+          Value: true
+        rear_mount:
+          Value: true
+        rear_right_wheel_link:
+          Value: true
+        top_structure:
           Value: true
       Marker Alpha: 1
       Marker Scale: 1
@@ -610,86 +439,50 @@ Visualization Manager:
       Show Names: true
       Tree:
         map:
-          JK_01/odom:
-            JK_01/base_link:
-              JK_01/base_camera_bottom_screw_frame:
-                JK_01/base_camera_link:
-                  JK_01/base_camera_color_frame:
-                    JK_01/base_camera_color_optical_frame:
+          odom:
+            base_link:
+              base_camera_bottom_screw_frame:
+                base_camera_link:
+                  base_camera_color_frame:
+                    base_camera_color_optical_frame:
                       {}
-                  JK_01/base_camera_depth_frame:
-                    JK_01/base_camera_depth_optical_frame:
+                  base_camera_depth_frame:
+                    base_camera_depth_optical_frame:
                       {}
-                  JK_01/base_camera_gazebo:
+                  base_camera_gazebo:
                     {}
-                  JK_01/base_camera_infra1_frame:
-                    JK_01/base_camera_infra1_optical_frame:
+                  base_camera_infra1_frame:
+                    base_camera_infra1_optical_frame:
                       {}
-                  JK_01/base_camera_infra2_frame:
-                    JK_01/base_camera_infra2_optical_frame:
+                  base_camera_infra2_frame:
+                    base_camera_infra2_optical_frame:
                       {}
-              JK_01/base_footprint:
-                {}
-              JK_01/chassis_link:
-                JK_01/front_fender_link:
+              chassis_link:
+                front_fender_link:
                   {}
-                JK_01/front_left_wheel_link:
+                front_left_wheel_link:
                   {}
-                JK_01/front_right_wheel_link:
+                front_right_wheel_link:
                   {}
-                JK_01/mid_mount:
-                  JK_01/front_mount:
+                mid_mount:
+                  front_mount:
                     {}
-                  JK_01/rear_mount:
+                  rear_mount:
                     {}
-                JK_01/rear_fender_link:
+                rear_fender_link:
                   {}
-                JK_01/rear_left_wheel_link:
+                rear_left_wheel_link:
                   {}
-                JK_01/rear_right_wheel_link:
+                rear_right_wheel_link:
                   {}
-              JK_01/gen3_lite_base_link:
-                JK_01/shoulder_link:
-                  JK_01/arm_link:
-                    JK_01/forearm_link:
-                      JK_01/lower_wrist_link:
-                        JK_01/upper_wrist_link:
-                          JK_01/end_effector_link:
-                            JK_01/dummy_link:
-                              JK_01/gripper_base_link:
-                                JK_01/left_finger_prox_link:
-                                  JK_01/left_finger_dist_link:
-                                    {}
-                                JK_01/right_finger_prox_link:
-                                  JK_01/right_finger_dist_link:
-                                    {}
-                              JK_01/tool_frame:
-                                {}
-                            JK_01/hand_camera_bracket:
-                              JK_01/hand_camera_bottom_screw_frame:
-                                JK_01/hand_camera_link:
-                                  JK_01/hand_camera_color_frame:
-                                    JK_01/hand_camera_color_optical_frame:
-                                      {}
-                                  JK_01/hand_camera_depth_frame:
-                                    JK_01/hand_camera_depth_optical_frame:
-                                      {}
-                                  JK_01/hand_camera_gazebo:
-                                    {}
-                                  JK_01/hand_camera_infra1_frame:
-                                    JK_01/hand_camera_infra1_optical_frame:
-                                      {}
-                                  JK_01/hand_camera_infra2_frame:
-                                    JK_01/hand_camera_infra2_optical_frame:
-                                      {}
-              JK_01/imu_link:
+              imu_link:
                 {}
-              JK_01/laser_base_link:
-                JK_01/laser_link:
+              laser_base_link:
+                laser_link:
                   {}
-              JK_01/navsat_link:
+              navsat_link:
                 {}
-              JK_01/top_structure:
+              top_structure:
                 {}
       Update Interval: 0
       Value: true
@@ -728,7 +521,7 @@ Visualization Manager:
       Update Interval: 0
       Value: false
     - Class: rviz/Camera
-      Enabled: false
+      Enabled: true
       Image Rendering: background and overlay
       Image Topic: /JK_01/hand_camera/color/image_raw
       Name: hand_camera
@@ -736,9 +529,8 @@ Visualization Manager:
       Queue Size: 2
       Transport Hint: raw
       Unreliable: false
-      Value: false
+      Value: true
       Visibility:
-        "": true
         Grid: true
         LaserScan: true
         Map: true
@@ -762,17 +554,16 @@ Visualization Manager:
         twist_controller: true
       Zoom Factor: 1
     - Class: rviz/Camera
-      Enabled: false
+      Enabled: true
       Image Rendering: background and overlay
-      Image Topic: /JK_01/base_camera/color/image_raw
+      Image Topic: /base_camera/color/image_raw
       Name: base_camera
       Overlay Alpha: 0.5
       Queue Size: 2
       Transport Hint: raw
       Unreliable: false
-      Value: false
+      Value: true
       Visibility:
-        "": true
         Grid: true
         LaserScan: true
         Map: true
@@ -818,7 +609,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.05000000074505806
       Style: Flat Squares
-      Topic: /JK_01/scan
+      Topic: /scan
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -925,7 +716,7 @@ Visualization Manager:
       Radius: 0.029999999329447746
       Shaft Diameter: 0.10000000149011612
       Shaft Length: 0.10000000149011612
-      Topic: /JK_01/base_exec_path
+      Topic: /base_exec_path
       Unreliable: false
       Value: true
     - Class: rviz/Marker
@@ -933,12 +724,12 @@ Visualization Manager:
       Marker Topic: /JK_01/target_marker
       Name: Marker
       Namespaces:
-        "": true
+        {}
       Queue Size: 100
       Value: true
     - Class: rviz/MarkerArray
       Enabled: true
-      Marker Topic: /JK_01/potential_markers
+      Marker Topic: /potential_markers
       Name: MarkerArray
       Namespaces:
         {}
@@ -946,18 +737,18 @@ Visualization Manager:
       Value: true
     - Class: rviz/MarkerArray
       Enabled: true
-      Marker Topic: /JK_01/obstacle_marker
+      Marker Topic: /obstacle_marker
       Name: MarkerArray
       Namespaces:
-        obstacles: true
+        {}
       Queue Size: 100
       Value: true
     - Class: rviz/Marker
       Enabled: true
-      Marker Topic: /JK_01/cmd_text_marker
+      Marker Topic: /target_marker
       Name: Marker
       Namespaces:
-        weights: true
+        {}
       Queue Size: 100
       Value: true
   Enabled: true
@@ -976,11 +767,11 @@ Visualization Manager:
     - Class: rviz/Measure
     - Class: rviz/SetInitialPose
       Theta std deviation: 0.2617993950843811
-      Topic: /JK_01/initialpose
+      Topic: /initialpose
       X std deviation: 0.5
       Y std deviation: 0.5
     - Class: rviz/SetGoal
-      Topic: /JK_01/move_base_simple/goal
+      Topic: /move_base_simple/goal
     - Class: rviz/PublishPoint
       Single click: true
       Topic: /clicked_point
@@ -988,7 +779,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 36.362205505371094
+      Distance: 21.49223518371582
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -996,41 +787,41 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 11.75821590423584
-        Y: -0.7110500335693359
-        Z: -0.3537052571773529
+        X: 5.165701866149902
+        Y: -1.9705322980880737
+        Z: -0.8102374076843262
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.5697963237762451
+      Pitch: 1.4997963905334473
       Target Frame: <Fixed Frame>
-      Yaw: 3.1440272331237793
+      Yaw: 3.034029245376587
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1014
+  Height: 2302
   Hide Left Dock: false
-  Hide Right Dock: true
+  Hide Right Dock: false
   MotionPlanning:
     collapsed: false
   MotionPlanning - Trajectory Slider:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd0000000400000000000001f700000338fc020000000cfb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d00000338000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb000000280020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000000000000000fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067000000010c000001880000017d00fffffffb000000280020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000000000000000fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067000000029a000001880000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000001600000016000000010000016700000232fc0200000005fb0000001e0054006f006f006c002000500072006f0070006500720074006900650073000000003d000000a70000005c00fffffffc000000ea000000a40000000000fffffffa000000000100000002fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000000ffffffff0000000000000000fb0000000a0056006900650077007300000005ed000001670000010000fffffffb0000001600680061006e0064005f00630061006d00650072006100000001940000006b0000001600fffffffb000000160062006100730065005f00630061006d00650072006100000002050000006a0000001600fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004180000005efc0100000002fb0000000800540069006d0065010000000000000418000003bc00fffffffb0000000800540069006d006501000000000000045000000000000000000000021b0000033800000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd000000040000000000000394000007f8fc020000000cfb0000001200530065006c0065006300740069006f006e00000001e10000009b000000b000fffffffb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000006e000007f80000018200fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb000000280020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000000000000000fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067000000010c00000188000002b800fffffffb000000280020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000000000000000fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067000000029a000001880000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff00000026000000260000000100000333000007f8fc0200000006fb0000001e0054006f006f006c002000500072006f0070006500720074006900650073010000006e000003e0000000b000fffffffb0000000a00560069006500770073010000045a000001c50000013200fffffffc0000066e000001320000000000fffffffa000000000100000001fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000000ffffffff0000000000000000fb0000001600680061006e0064005f00630061006d006500720061010000062b000000260000002600fffffffb000000160062006100730065005f00630061006d006500720061010000065d000002090000002600fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e1000001970000000300000de60000005efc0100000002fb0000000800540069006d0065010000000000000de6000006dc00fffffffb0000000800540069006d0065010000000000000450000000000000000000000707000007f800000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
     collapsed: false
   Tool Properties:
-    collapsed: true
+    collapsed: false
   Views:
-    collapsed: true
-  Width: 1048
+    collapsed: false
+  Width: 3558
   X: 828
-  Y: 259
+  Y: 54
   base_camera:
-    collapsed: true
+    collapsed: false
   hand_camera:
-    collapsed: true
+    collapsed: false
