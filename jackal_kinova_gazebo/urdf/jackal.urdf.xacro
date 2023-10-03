@@ -143,6 +143,13 @@
         </geometry>
         <material name="yellow" />
       </visual>
+
+      <collision name="front_fender_collision">
+        <geometry>
+          <mesh filename="package://jackal_kinova_gazebo/meshes/jackal-fender.stl"
+            scale="1.2 1.2 1.0" />
+        </geometry>
+      </collision>
     </link>
   </xacro:unless>
 
@@ -185,7 +192,7 @@
         </geometry>
         <material name="yellow" />
       </visual>
-      <collision name="front_fender_collision">
+      <collision name="rear_fender_collision">
         <geometry>
           <mesh filename="package://jackal_kinova_gazebo/meshes/jackal-fender.stl"
             scale="1.2 1.2 1.0" />

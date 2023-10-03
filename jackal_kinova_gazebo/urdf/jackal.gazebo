@@ -77,7 +77,7 @@
       <alwaysOn>true</alwaysOn>
       <updateRate>10.0</updateRate>
       <contact>
-        <collision>base_link_fixed_joint_lump__rear_fender_collision_collision_2</collision>
+        <collision>base_link_fixed_joint_lump__rear_fender_collision_collision_3</collision>
       </contact>
       <plugin name="contact_plugin_1" filename="libgazebo_ros_bumper.so">
 
@@ -93,7 +93,7 @@
       <alwaysOn>true</alwaysOn>
       <updateRate>10.0</updateRate>
       <contact>
-        <collision>base_link_fixed_joint_lump__front_fender_collision_collision_1</collision>
+        <collision>base_link_fixed_joint_lump__front_fender_collision_collision_2</collision>
       </contact>
       <plugin name="contact_plugin_2" filename="libgazebo_ros_bumper.so">
         <bumperTopicName>base_collision_2</bumperTopicName>
