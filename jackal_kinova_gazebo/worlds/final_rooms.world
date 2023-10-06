@@ -1007,7 +1007,7 @@
     <state world_name='default'>
       <sim_time>889 866000000</sim_time>
       <real_time>0 0</real_time>
-      <wall_time>1696362826 645851328</wall_time>
+      <wall_time>1696570404 40875772</wall_time>
       <iterations>0</iterations>
       <model name='Unit_Room_0'>
         <pose>5.0375 6.5375 0 0 -0 0</pose>
@@ -1346,30 +1346,20 @@
         </link>
       </model>
       <model name='unit_wall_0_clone_0'>
-        <pose>5.62541 -4.14823 0.5 0 -0 0</pose>
-        <scale>1 1.51459 1</scale>
+        <pose>5.61031 -3.09266 0.5 0 -0 0</pose>
+        <scale>1 2.97199 1</scale>
         <link name='link'>
-          <pose>5.62541 -4.14823 0.5 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='unit_wall_0_clone_1'>
-        <pose>4.96422 -3.00481 0.5 0 -0 1.56875</pose>
-        <scale>1 1.48219 1</scale>
-        <link name='link'>
-          <pose>4.96422 -3.00481 0.5 0 -0 1.56875</pose>
+          <pose>5.61031 -3.09266 0.5 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='unit_wall_0_clone_2'>
-        <pose>4.99132 -5.29316 0.5 0 -0 1.56632</pose>
-        <scale>1 1.40297 1</scale>
+        <pose>5.26681 -5.11402 0.5 0 -0 1.56632</pose>
+        <scale>1 0.98781 1</scale>
         <link name='link'>
-          <pose>4.99132 -5.29316 0.5 0 -0 1.56632</pose>
+          <pose>5.26681 -5.11402 0.5 0 -0 1.56632</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -1431,7 +1421,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>1.43334 4.92741 30.8154 1e-06 1.5698 -0.0236</pose>
+        <pose>7.50733 -3.8908 32.7782 1e-06 1.5698 -0.0236</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -1880,60 +1870,6 @@
     </model>
     <model name='unit_wall_0_clone_0'>
       <pose>5.06458 -4.14823 0.5 0 -0 0</pose>
-      <link name='link'>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.166667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.166667</iyy>
-            <iyz>0</iyz>
-            <izz>0.166667</izz>
-          </inertia>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>0.45 1.2 1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>0.45 1.2 1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <name>Gazebo/White</name>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <static>1</static>
-    </model>
-    <model name='unit_wall_0_clone_1'>
-      <pose>5.06165 -2.75644 0.5 0 -0 0</pose>
       <link name='link'>
         <inertial>
           <mass>1</mass>
