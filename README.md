@@ -75,7 +75,7 @@ $ source ~/.bashrc
 
 - ros_kortex
 $ cd ~/catkin_ws/src
-$ git clone -b noetic-multirobot-devel https://github.com/Kinovarobotics/ros_kortex.git
+$ git clone -b noetic-devel https://github.com/Kinovarobotics/ros_kortex.git
 ```
 
 - If [gazebo_grasp_fix plugin](https://github.com/JenniferBuehler/gazebo-pkgs) is already installed, remove ```gazebo-pkgs``` in ```ros_kortex/third_party``` before running ```catkin_make```.
@@ -84,7 +84,7 @@ $ git clone -b noetic-multirobot-devel https://github.com/Kinovarobotics/ros_kor
 ### jackal_kinova_simulator Installation
 ```
 $ cd ~/catkin_ws/src
-$ git clone -b noetic-devel https://github.com/Sungwwoo/jackal_kinova_simulator.git
+$ git clone -b noetic-multirobot-devel https://github.com/Sungwwoo/jackal_kinova_simulator.git
 
 $ cd ~/catkin_ws && catkin_make
 $ rospack profile && rosstack profile
