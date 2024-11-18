@@ -35,7 +35,7 @@ $ git clone -b noetic-devel https://github.com/QualiaT/ar_track_alvar.git
 $ cd ~/catkin_ws && catkin_make
 $ rospack profile && rosstack profile
 ```
-```jackal_kinova``` uses two Realsense D435i.
+```jackal_kinova``` uses two Realsense D435.
 - For Realsense SDK 2.0 install:
 ```
 $ sudo apt-key adv --keyserver keys.gnupg.net --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
